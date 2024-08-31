@@ -1,0 +1,48 @@
+<template>
+            <li role="presentation" class="slds-listbox__item slds-p-top_small"  onchange={handleChange} onclick={handleSelect}>
+                <span id="listbox-option-unique-id-01"
+                    class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+                    role="option">
+                    <template if:true={orderItemBoolean}>
+                        <span class="slds-media__body">
+                            <span class="slds-listbox__option-text slds-listbox__option-text_entity">{rec.OrderItemNumber}</span>
+                        </span>
+                    </template>
+                    <template if:true={orderProductBoolean}>
+                        <span class="slds-media__body">
+                            <span class="slds-listbox__option-text slds-listbox__option-text_entity">{rec.Product_Type__c}</span>
+                        </span>
+                    </template>
+                    <template if:true={orderSubproductBoolean}>
+                        <span class="slds-media__body">
+                            <span class="slds-listbox__option-text slds-listbox__option-text_entity">{rec.Product_Sub_Type__c}</span>
+                        </span>
+                    </template>
+                </span>
+            </li>
+   
+<!-- 
+    <template if:true={orderProductBoolean}>
+            <li role="presentation" class="slds-listbox__item slds-p-top_small"  onchange={handleChange} onclick={handleSelect}>
+                <span 
+                    class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+                    role="option">
+                    <span class="slds-media__body">
+                        <span class="slds-listbox__option-text slds-listbox__option-text_entity">{rec.Product_Type__c}</span>
+                    </span>
+                </span>
+            </li>
+    </template>
+
+    <template if:true={orderSubproductBoolean}>
+            <li role="presentation" class="slds-listbox__item slds-p-top_small"  onchange={handleChange} onclick={handleSelect}>
+                <span 
+                    class="slds-media slds-listbox__option slds-listbox__option_entity slds-listbox__option_has-meta"
+                    role="option">
+                    <span class="slds-media__body">
+                        <span class="slds-listbox__option-text slds-listbox__option-text_entity">{rec.Product_Sub_Type__c}</span>
+                    </span>
+                </span>
+            </li>
+    </template> -->
+</template>

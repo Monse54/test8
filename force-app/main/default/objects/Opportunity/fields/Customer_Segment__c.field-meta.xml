@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Segment__c</fullName>
+    <description>For storing customer segment on Opportunity Records - visible only to Administrator as of now</description>
+    <label>Customer Segment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Traditional Marketers</fullName>
+                <default>false</default>
+                <label>Traditional Marketers</label>
+            </value>
+            <value>
+                <fullName>Mobile Developer Studios/Internet Businesses</fullName>
+                <default>false</default>
+                <label>Mobile Developer Studios/Internet Businesses</label>
+            </value>
+            <value>
+                <fullName>Content providers/Affiliate Advertisers</fullName>
+                <default>false</default>
+                <label>Content providers/Affiliate Advertisers</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Invoiced_Amount_in_USD__c</fullName>
+    <label>Total Invoiced Amount (in USD)</label>
+    <summarizedField>Insertion_Order__c.Total_Invoiced_Amount__c</summarizedField>
+    <summaryForeignKey>Insertion_Order__c.Opportunity_Name__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

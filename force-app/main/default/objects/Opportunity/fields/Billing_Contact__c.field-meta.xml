@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Contact__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>This field will capture the Billing contact from the Account. This can be updated later.</description>
+    <label>Billing Contact</label>
+    <lookupFilter>
+        <active>false</active>
+        <booleanFilter>(1 AND 2) OR 3</booleanFilter>
+        <filterItems>
+            <field>$Source.AccountId</field>
+            <operation>equals</operation>
+            <valueField>Contact.AccountId</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Contact.Account.Record_Type_Name__c</field>
+            <operation>notEqual</operation>
+            <value>Agency</value>
+        </filterItems>
+        <filterItems>
+            <field>Contact.Account.Record_Type_Name__c</field>
+            <operation>equals</operation>
+            <value>Agency</value>
+        </filterItems>
+        <isOptional>true</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Opportunities (Billing Contact)</relationshipLabel>
+    <relationshipName>Opportunities</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

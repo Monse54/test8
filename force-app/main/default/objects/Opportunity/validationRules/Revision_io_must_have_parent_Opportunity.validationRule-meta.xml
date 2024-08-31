@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revision_io_must_have_parent_Opportunity</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( OR( ISPICKVAL(Opportunity_Type__c , &quot;Positive Revision&quot;) ,ISPICKVAL(Opportunity_Type__c , &quot;Negative Revision&quot;)) ,  IF( ISBLANK( Parent_Opportunity__c ) , true, false) , false)</errorConditionFormula>
+    <errorMessage>RevisionIO Must Have Parent Opportunity</errorMessage>
+</ValidationRule>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deployment_Stage_Mediation__c</fullName>
+    <description>This is the Mediation stage for an active publisher working with Publisher Account Management</description>
+    <inlineHelpText>This is the Mediation stage for an active publisher working with Publisher Account Management</inlineHelpText>
+    <label>Deployment Stage - Mediation</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Business_Segment__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Prospecting</fullName>
+                <default>false</default>
+                <label>Prospecting</label>
+            </value>
+            <value>
+                <fullName>Pending Setup</fullName>
+                <default>false</default>
+                <label>Pending Setup</label>
+            </value>
+            <value>
+                <fullName>Ad Sources Created/Pending Live</fullName>
+                <default>false</default>
+                <label>Ad Sources Created/Pending Live</label>
+            </value>
+            <value>
+                <fullName>Troubleshooting/Testing</fullName>
+                <default>false</default>
+                <label>Troubleshooting/Testing</label>
+            </value>
+            <value>
+                <fullName>Live on Mediation</fullName>
+                <default>false</default>
+                <label>Live on Mediation</label>
+            </value>
+            <value>
+                <fullName>Paused</fullName>
+                <default>false</default>
+                <label>Paused</label>
+            </value>
+            <value>
+                <fullName>Dead</fullName>
+                <default>false</default>
+                <label>Dead</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Prospecting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Pending Setup</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Ad Sources Created/Pending Live</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Troubleshooting/Testing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Live on Mediation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Paused</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Dead</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deployment_stage_Mandatory</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+   OR($RecordType.DeveloperName = &apos;New_Supply&apos;, 
+      $RecordType.DeveloperName = &apos;Upsell_Supply&apos;
+   ), 
+   ISPICKVAL(StageName,&apos;Closed Won&apos;),
+   OR(       
+     AND(ISPICKVAL(Business_Segment__c,&apos;Media&apos;),
+     AND( ISBLANK(TEXT(Deployment_Stage_IM__c)),ISBLANK(TEXT(Deployment_Stage_Media__c)))  ),
+     AND(OR(ISPICKVAL(Business_Segment__c,&apos;Mediation&apos;), 
+      ISPICKVAL(Business_Segment__c,&apos;Primary Mediation&apos;)),
+      ISBLANK(TEXT(Deployment_Stage_Mediation__c)))
+   )
+)&amp;&amp; 
+(Account.RecordType.DeveloperName == &apos;Advertiser&apos; || 
+Account.RecordType.DeveloperName == &apos;&apos; )</errorConditionFormula>
+    <errorMessage>Please enter valid &apos;Deployment Stage&apos;</errorMessage>
+</ValidationRule>

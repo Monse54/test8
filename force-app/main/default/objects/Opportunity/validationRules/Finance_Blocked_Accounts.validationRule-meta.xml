@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_Blocked_Accounts</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISNEW() &amp;&amp; Account.Finance_Blocked__c</errorConditionFormula>
+    <errorMessage>New Opportunity can&apos;t be created under Finance Blocked Account</errorMessage>
+</ValidationRule>

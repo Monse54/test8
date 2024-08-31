@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Cannot_Be_Closed_Directly</fullName>
+    <active>false</active>
+    <description>Opportunity is not allowed to be marked as closed won. It will be marked as Closed Won, once IO gets signed.</description>
+    <errorConditionFormula>ISCHANGED(StageName) &amp;&amp;
+ISPICKVAL(StageName,&apos;Closed Won&apos;) &amp;&amp;
+$Profile.Name!=&apos;Finance&apos; &amp;&amp; $Profile.Name!=&apos;System Administrator&apos;</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Opportunity cant be marked as Closed Won. It will be auto closed once IO gets signed.</errorMessage>
+</ValidationRule>

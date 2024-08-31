@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_End_Date_and_Launch_Date</fullName>
+    <active>true</active>
+    <description>Validation to ensure End Date &gt;= Launch Date</description>
+    <errorConditionFormula>AND
+( ($RecordType.Name = &apos;Demand&apos; || $RecordType.Name = &apos; Etisalat Demand&apos;),
+End_Date__c &lt; Launch_Date__c,
+IF(ISNEW(), true, DATEVALUE(CreatedDate) &gt;= DATEVALUE(&quot;2019-02-03&quot;))
+) &amp;&amp;
+(Account.RecordType.DeveloperName == &apos;Advertiser&apos; ||
+Account.RecordType.DeveloperName == &apos;&apos; )&amp;&amp; $Profile.Name &lt;&gt; &apos;System Administrator&apos;</errorConditionFormula>
+    <errorDisplayField>End_Date__c</errorDisplayField>
+    <errorMessage>End Date cannot be less than Launch Date</errorMessage>
+</ValidationRule>

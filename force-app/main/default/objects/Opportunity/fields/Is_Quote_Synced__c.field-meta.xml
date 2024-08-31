@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Quote_Synced__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This will capture if the opportunity products are manually created or synced from quote</description>
+    <label>Is Quote Synced</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

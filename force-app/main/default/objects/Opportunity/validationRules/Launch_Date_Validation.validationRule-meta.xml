@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Launch_Date_Validation</fullName>
+    <active>false</active>
+    <description>Launch Date can not be less that the date when Opportunity is closed</description>
+    <errorConditionFormula>$RecordType.Name = &apos;Demand Sales&apos; &amp;&amp; 
+ISCHANGED(StageName) &amp;&amp; 
+ISPICKVAL(StageName,&apos;Closed Won&apos;) &amp;&amp;
+Launch_Date__c &lt; Today() &amp;&amp; 
+(Account.RecordType.DeveloperName == &apos;Enterprise&apos; || 
+ Account.RecordType.DeveloperName == &apos;&apos; )</errorConditionFormula>
+    <errorDisplayField>X3D_Ads__c</errorDisplayField>
+    <errorMessage>Launch Date can not be before the date on which IO is closed.</errorMessage>
+</ValidationRule>

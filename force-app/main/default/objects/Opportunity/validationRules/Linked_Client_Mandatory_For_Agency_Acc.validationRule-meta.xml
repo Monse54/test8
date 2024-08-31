@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Linked_Client_Mandatory_For_Agency_Acc</fullName>
+    <active>true</active>
+    <description>Linked Client field is mandatory for opportunity associated with agency account.</description>
+    <errorConditionFormula>Account.Record_Type_Name__c=&apos;Agency&apos; &amp;&amp; !ISPICKVAL(Opportunity_SubType__c, &apos;Glance&apos;) &amp;&amp;  RecordType.DeveloperName &lt;&gt; &apos;Search&apos; &amp;&amp; ISBLANK(Brand_Name1__c) &amp;&amp; $Profile.Name&lt;&gt;&apos;System Administrator&apos;</errorConditionFormula>
+    <errorDisplayField>Brand_Name1__c</errorDisplayField>
+    <errorMessage>Linked Client field is mandatory for opportunity associated with agency account.</errorMessage>
+</ValidationRule>

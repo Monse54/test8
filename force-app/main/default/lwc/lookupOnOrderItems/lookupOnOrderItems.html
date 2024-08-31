@@ -1,0 +1,173 @@
+<template>
+   
+    <div class="slds-m-padding_around">
+        <template if:true={orderItemBoolean}>
+            <template  if:false={selectedRecord}>
+                <c-lwcsearchcomponent order-item-boolean="true"
+                 order-value={orderValue} onchange={hanldeSearch}  ></c-lwcsearchcomponent>
+            </template>
+        </template>
+
+        <template if:true={orderProductBoolean}>
+            <template if:false={selectedRecord}>
+                <c-lwcsearchcomponent 
+                order-product-boolean="true" order-value2={orderValue2} onclick={hanldeSearch}   ></c-lwcsearchcomponent>
+            </template>
+        </template>
+
+        <template if:true={orderSubproductBoolean}>
+            <template if:false={selectedRecord}>
+                <c-lwcsearchcomponent 
+                order-subproduct-boolean="true" order-value3={orderValue3} onclick={hanldeSearch}   ></c-lwcsearchcomponent>
+            </template>
+        </template>
+    </div>
+
+
+ <!-- search- OrderItems-->
+    <template if:true={orderItemBoolean}>
+           
+            <div class="slds-m-padding_around">
+                <div class="abcd previewList" aria-required="true">
+                <template if:false={selectedRecord} >
+                    <template if:true={records}>
+                        <div class="adjustHeight">
+                            <template for:each={records} for:item="rec" for:index="index">
+                                <ul key={rec.OrderItemNumber} 
+                                    class="slds-listbox" >
+                                    <c-lwcrecordlist order-item-boolean="true" rec={rec} onchange={passtoParent}
+                                        iconname={iconname} value={changeStyle}
+                                        onselect={handleSelect1}
+                                        onpass={fetchValue}
+                                        onprogressvaluechange={hanldeProgressValueChange}>
+                                    </c-lwcrecordlist>
+                                    </ul>
+                                </template>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+                <div>
+                        <template if:true={selectedRecord}>
+                            <label class="required"></label>
+                            <label class="slds-form-element__label" for="unique-id-of-input " > 
+                                    {label}
+                            </label>
+                            <div class="slds-combobox__form-element slds-input-has-icon 
+                                            slds-input-has-icon_left-right" onchange={handleChange} role="none">
+                                    <span class="slds-icon_container
+                                                slds-icon-standard-account 
+                                                slds-combobox__input-entity-icon" title="Account">
+                                        <lightning-icon icon-name={iconname} size="xx-small" ></lightning-icon>
+                                    </span>
+                                    <!-- <form> -->
+                                        <div class="slds-form-element">
+
+                                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                                            <lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:search"></lightning-icon>
+                                            <input class="slds-input"
+                                            id="combobox-id-5" aria-controls="listbox-id-5" 
+                                            autocomplete="off" role="textbox" type="text" 
+                                            placeholder="Select an Option" 
+                                            value={selectedRecord.OrderItemNumber} name="Retailer"
+                                            readonly={isReadOnly4} required/>
+                                        </div>
+                                    </div>
+                                <!-- </form> -->
+                                </div>
+                        </template>
+                    </div>
+            </div>
+    </template>
+
+
+     <!-- search- Products-->
+     <template if:true={orderProductBoolean}>
+            <div class="slds-m-padding_around">
+                <div class="abcd previewList" aria-required="true">
+                <template if:false={selectedRecord} >
+                    <template if:true={records}>
+                        <div class="adjustHeight">
+                            <template for:each={records} for:item="rec" for:index="index">
+                                <ul key={rec.OrderItemNumber} 
+                                    class="slds-listbox" >
+                                    <c-lwcrecordlist rec={rec} order-product-boolean="true" onchange={passtoParent}
+                                        iconname={iconname} value={changeStyle}
+                                        onselect={handleSelect2}
+                                        onpass={fetchValue}
+                                        onprogressvaluechange={hanldeProgressValueChange}>
+                                    </c-lwcrecordlist>
+                                    </ul>
+                                </template>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+                <div>
+                        <template if:true={selectedRecord}>
+                            <div class="slds-combobox__form-element slds-input-has-icon 
+                                            slds-input-has-icon_left-right" onchange={handleChange} role="none">
+                                        <div class="slds-form-element">
+                                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                                            <!-- <lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:search"></lightning-icon> -->
+                                            <input class="slds-input {}"
+                                            aria-controls="listbox-id-5" 
+                                            autocomplete="off" role="textbox" type="text" 
+                                            placeholder="Select an Option" 
+                                            value={selectedRecord.Product_Type__c} name="Retailer"
+                                            readonly={isReadOnly4} required/>
+                                        </div>
+                                    </div>
+                                <!-- </form> -->
+                                </div>
+                        </template>
+                    </div>
+            </div>
+</template>
+
+
+  <!-- search- SubProducts-->
+  <template if:true={orderSubproductBoolean}>
+    <div class="slds-m-padding_around">
+        <div class="abcd previewList" aria-required="true">
+        <template if:false={selectedRecord} >
+            <template if:true={records}>
+                <div class="adjustHeight">
+                    <template for:each={records} for:item="rec" for:index="index">
+                        <ul key={rec.Oli_Sub_Product__c} 
+                            class="slds-listbox" >
+                            <c-lwcrecordlist order-subproduct-boolean="true" rec={rec} onchange={passtoParent}
+                                iconname={iconname} value={changeStyle}
+                                onselect={handleSelect3}
+                                onpass={fetchValue}
+                                onprogressvaluechange={hanldeProgressValueChange}>
+                            </c-lwcrecordlist>
+                            </ul>
+                        </template>
+                    </div>
+                </template>
+            </template>
+        </div>
+        <div>
+                <template if:true={selectedRecord}>
+                    <div class="slds-combobox__form-element slds-input-has-icon 
+                                    slds-input-has-icon_left-right" onchange={handleChange} role="none">
+                                <div class="slds-form-element">
+
+                                <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                                    <!-- <lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:search"></lightning-icon> -->
+                                    <input class="slds-input "
+                                    aria-controls="listbox-id-5" 
+                                    autocomplete="off" role="textbox" type="text" 
+                                    placeholder="Select an Option" 
+                                    value={selectedRecord.Sub_Product_Type__c} name="Retailer"
+                                    readonly={isReadOnly4} required/>
+                                </div>
+                            </div>
+                        <!-- </form> -->
+                        </div>
+                </template>
+            </div>
+    </div>
+</template>
+</template>

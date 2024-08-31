@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Go_Live_Date__c</fullName>
+    <description>System field -&gt; used to populate the date of Deployment stage as &apos;Live&apos; and Status as &apos;Closed&apos;</description>
+    <label>Aermarket Go Live Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

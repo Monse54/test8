@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Segment__c</fullName>
+    <label>Opportunity Segment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Opportunity_SubType__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Brand</fullName>
+                <default>false</default>
+                <label>Brand</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>Mediation</fullName>
+                <default>false</default>
+                <label>Mediation</label>
+            </value>
+            <value>
+                <fullName>Media</fullName>
+                <default>false</default>
+                <label>Media</label>
+            </value>
+            <value>
+                <fullName>Primary Mediation</fullName>
+                <default>false</default>
+                <label>Primary Mediation</label>
+            </value>
+            <value>
+                <fullName>Programmatic</fullName>
+                <default>false</default>
+                <label>Programmatic</label>
+            </value>
+            <value>
+                <fullName>Monetization Partner</fullName>
+                <default>false</default>
+                <label>Monetization Partner</label>
+            </value>
+            <value>
+                <fullName>White Label partner</fullName>
+                <default>false</default>
+                <label>White Label partner</label>
+            </value>
+            <value>
+                <fullName>Offsite</fullName>
+                <default>false</default>
+                <label>Offsite</label>
+            </value>
+            <value>
+                <fullName>Video/SPA/Display</fullName>
+                <default>false</default>
+                <label>Video/SPA/Display</label>
+            </value>
+            <value>
+                <fullName>Social</fullName>
+                <default>false</default>
+                <label>Social</label>
+            </value>
+            <value>
+                <fullName>Audience</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Audience</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Etisalat</controllingFieldValue>
+            <controllingFieldValue>Appsumer</controllingFieldValue>
+            <controllingFieldValue>Pulse</controllingFieldValue>
+            <controllingFieldValue>Search</controllingFieldValue>
+            <controllingFieldValue>PMP</controllingFieldValue>
+            <controllingFieldValue>China</controllingFieldValue>
+            <controllingFieldValue>Meson Prime</controllingFieldValue>
+            <controllingFieldValue>Meson Wrap</controllingFieldValue>
+            <controllingFieldValue>Demand</controllingFieldValue>
+            <controllingFieldValue>Glance</controllingFieldValue>
+            <valueName>Brand</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Etisalat</controllingFieldValue>
+            <controllingFieldValue>Appsumer</controllingFieldValue>
+            <controllingFieldValue>Pulse</controllingFieldValue>
+            <controllingFieldValue>Search</controllingFieldValue>
+            <controllingFieldValue>PMP</controllingFieldValue>
+            <controllingFieldValue>China</controllingFieldValue>
+            <controllingFieldValue>Meson Prime</controllingFieldValue>
+            <controllingFieldValue>Meson Wrap</controllingFieldValue>
+            <controllingFieldValue>Demand</controllingFieldValue>
+            <controllingFieldValue>Glance</controllingFieldValue>
+            <valueName>Performance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Etisalat</controllingFieldValue>
+            <controllingFieldValue>Appsumer</controllingFieldValue>
+            <controllingFieldValue>Pulse</controllingFieldValue>
+            <controllingFieldValue>PMP</controllingFieldValue>
+            <controllingFieldValue>China</controllingFieldValue>
+            <controllingFieldValue>Meson Prime</controllingFieldValue>
+            <controllingFieldValue>Meson Wrap</controllingFieldValue>
+            <controllingFieldValue>Demand</controllingFieldValue>
+            <controllingFieldValue>Glance</controllingFieldValue>
+            <valueName>Programmatic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commerce</controllingFieldValue>
+            <controllingFieldValue>Gaming - Supply</controllingFieldValue>
+            <controllingFieldValue>Non Gaming - Supply</controllingFieldValue>
+            <valueName>Mediation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commerce</controllingFieldValue>
+            <valueName>Monetization Partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commerce</controllingFieldValue>
+            <valueName>White Label partner</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commerce</controllingFieldValue>
+            <valueName>Offsite</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commerce</controllingFieldValue>
+            <valueName>Video/SPA/Display</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commerce</controllingFieldValue>
+            <valueName>Social</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gaming - Supply</controllingFieldValue>
+            <controllingFieldValue>Non Gaming - Supply</controllingFieldValue>
+            <valueName>Media</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Gaming - Supply</controllingFieldValue>
+            <controllingFieldValue>Non Gaming - Supply</controllingFieldValue>
+            <valueName>Primary Mediation</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

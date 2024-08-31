@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Account_All</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Sales_Account_Owner__c</columns>
+    <columns>ACCOUNT.INDUSTRY</columns>
+    <columns>MDM_Approval_Status__c</columns>
+    <columns>Account_Region_del__c</columns>
+    <columns>Billing_Country__c</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>ACCOUNT.LAST_ACTIVITY</columns>
+    <columns>ACCOUNT.LAST_UPDATE</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Account</label>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

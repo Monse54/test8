@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Stage__c</fullName>
+    <description>For Publisher Opportunity</description>
+    <label>Activity Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>true</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Burn Management</fullName>
+                <default>false</default>
+                <label>Burn Management</label>
+            </value>
+            <value>
+                <fullName>Spot Buy</fullName>
+                <default>false</default>
+                <label>Spot Buy</label>
+            </value>
+            <value>
+                <fullName>Up-sell of Product</fullName>
+                <default>false</default>
+                <label>Up-sell of Product</label>
+            </value>
+            <value>
+                <fullName>Scale-Up Completed</fullName>
+                <default>false</default>
+                <label>Scale-Up Completed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

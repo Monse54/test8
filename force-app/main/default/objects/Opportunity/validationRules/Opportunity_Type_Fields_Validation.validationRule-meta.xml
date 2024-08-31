@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Type_Fields_Validation</fullName>
+    <active>true</active>
+    <description>&apos;Opportunity Type&apos;, &apos;Opportunity Sub-type&apos; and &apos;Opportunity Segment&apos; as mandatory fields for new opportunities from 2-May-2022.</description>
+    <errorConditionFormula>$Profile.Name != &apos;System Administrator&apos; &amp;&amp; AND(OR(ISNEW(), DateValue(CreatedDate)&gt;=Date(2022,05,02)), OR(ISBLANK(TEXT(Type)), ISBLANK(TEXT(Opportunity_SubType__c)), ISBLANK(TEXT(Opportunity_Segment__c))), $Profile.Name&lt;&gt;&apos;System Administrator&apos;)</errorConditionFormula>
+    <errorMessage>&apos;Opportunity Type&apos;, &apos;Opportunity Sub-type&apos; and &apos;Opportunity Segment&apos; are mandatory fields.</errorMessage>
+</ValidationRule>

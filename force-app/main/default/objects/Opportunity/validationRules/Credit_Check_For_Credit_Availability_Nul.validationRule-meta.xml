@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Credit_Check_For_Credit_Availability_Nul</fullName>
+    <active>false</active>
+    <description>Credit Check fields are blank, Please save this opportunity with Proposal Requested Stage.</description>
+    <errorConditionFormula>$Profile.Name  != &apos;System Administrator&apos; &amp;&amp; (((TEXT(StageName) &lt;&gt; &apos;Proposal Requested&apos; &amp;&amp; TEXT(StageName) &lt;&gt; &apos;Dead/Lost&apos; &amp;&amp; TEXT(StageName) &lt;&gt; &apos;Target&apos; &amp;&amp; TEXT(StageName) &lt;&gt; &apos;Qualified&apos;) &amp;&amp; (ISBLANK(Account.Credit_Limit__c ) || ISNULL(Account.Credit_Limit__c) )) &amp;&amp;  DATEVALUE( Account.CreatedDate)  &gt;=  DATE(2012,5,30) &amp;&amp; TEXT(Type) == &apos;Ad Sales&apos;) &amp;&amp; (Number_of_PMP_IOs__c == 0 &amp;&amp; Text(Category__c) != &apos;PMP&apos;) &amp;&amp;
+(Account.RecordType.DeveloperName == &apos;Advertiser&apos; || 
+Account.RecordType.DeveloperName == &apos;&apos; ) &amp;&amp;
+RecordType.DeveloperName == &apos;Advertiser&apos;</errorConditionFormula>
+    <errorMessage>Credit Check fields are blank, Please save this opportunity with Proposal Requested Stage.</errorMessage>
+</ValidationRule>

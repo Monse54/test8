@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Declining_Studio__c</fullName>
+    <label>Reason for Declining Studio</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Working with competitor</fullName>
+                <default>false</default>
+                <label>Working with competitor</label>
+            </value>
+            <value>
+                <fullName>Not ready for rich media</fullName>
+                <default>false</default>
+                <label>Not ready for rich media</label>
+            </value>
+            <value>
+                <fullName>Studio is too expensive</fullName>
+                <default>false</default>
+                <label>Studio is too expensive</label>
+            </value>
+            <value>
+                <fullName>Do not have the budget for Studio</fullName>
+                <default>false</default>
+                <label>Do not have the budget for Studio</label>
+            </value>
+            <value>
+                <fullName>Prefer to outsource ad creation</fullName>
+                <default>false</default>
+                <label>Prefer to outsource ad creation</label>
+            </value>
+            <value>
+                <fullName>Don&apos;t have the internal bandwidth</fullName>
+                <default>false</default>
+                <label>Don&apos;t have the internal bandwidth</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

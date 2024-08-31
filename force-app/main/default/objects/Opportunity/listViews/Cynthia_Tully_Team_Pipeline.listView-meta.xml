@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cynthia_Tully_Team_Pipeline</fullName>
+    <columns>Opportunity_Owner_Role__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Brand_Name1__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.FISCAL_PERIOD</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.FULL_NAME</field>
+        <operation>equals</operation>
+        <value>yuyu chen,daniel orcutt,rebecca granat,julie berger,yvonne morel,danielle francis,krista arrigo,william mcclung</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.FISCAL_PERIOD</field>
+        <operation>equals</operation>
+        <value>Q1-2022</value>
+    </filters>
+    <label>Cynthia Tully Team Pipeline</label>
+</ListView>

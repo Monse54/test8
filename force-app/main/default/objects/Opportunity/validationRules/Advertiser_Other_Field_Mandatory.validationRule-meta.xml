@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Advertiser_Other_Field_Mandatory</fullName>
+    <active>false</active>
+    <description>When Reason for Loss Choose as Other Then Reason for Loss is mandatory.</description>
+    <errorConditionFormula>ISPICKVAL(Type,&apos;New Business&apos;) &amp;&amp;  ISBLANK(Others__c) &amp;&amp;
+(Account.RecordType.DeveloperName == &apos;Advertiser&apos; || 
+Account.RecordType.DeveloperName == &apos;&apos; )</errorConditionFormula>
+    <errorMessage>Please Specify Other Reason.</errorMessage>
+</ValidationRule>

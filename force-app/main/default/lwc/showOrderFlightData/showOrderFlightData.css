@@ -1,0 +1,11 @@
+td,th{
+   position: relative;
+  
+ }
+
+  td span,th span{
+      text-overflow: ellipsis;
+   overflow : hidden;
+   white-space: nowrap;
+   display: block;
+  }

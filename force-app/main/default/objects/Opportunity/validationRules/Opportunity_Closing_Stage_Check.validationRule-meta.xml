@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Closing_Stage_Check</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( OR(RecordType.DeveloperName = &apos;Demand&apos;,RecordType.DeveloperName = &apos;Advertiser&apos;) , IF( ISCHANGED( StageName ) ,  IF(ISPICKVAL(StageName,&apos;Closed Won&apos;), NOT(OR(ISPICKVAL(PRIORVALUE(StageName),&apos;Awaiting Finance Approval&apos;), ISPICKVAL(PRIORVALUE(StageName),&apos;Awaiting Finance Approval for Revision&apos;))), false) , false), false)</errorConditionFormula>
+    <errorMessage>Opportunity can be moved to Closed Won only from Awaiting Finance Approval or Awaiting Finance Approval for Revision stage.</errorMessage>
+</ValidationRule>

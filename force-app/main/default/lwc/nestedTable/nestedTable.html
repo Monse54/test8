@@ -1,0 +1,26 @@
+<template>
+    <tr>
+            <th >
+                Chevron
+            </th>
+            <th >
+                Name
+            </th>
+
+    </tr>
+    <template for:each={items} for:item="item">
+        <tr key={item.Id} if:true={item.isVisible}>
+            <td>
+                <div if:true={item.isExpandable}>
+                    <lightning-button-icon
+                        icon-name="utility:chevronright"
+                        variant="bare"
+                        alternative-text="Expand"
+                        title="Expand">
+                    </lightning-button-icon>
+                </div>
+            </td>
+            <td>{item.Name}</td>
+        </tr>
+    </template>
+</template>

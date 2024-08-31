@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OppCanBeCreatedPostAccountSyncWithMSD</fullName>
+    <active>false</active>
+    <description>NO Opportunity will be created if master account Id is not populated at account level.</description>
+    <errorConditionFormula>AND( ISNEW(), ISBLANK(Account.MasterAccountId__c),
+NOT(Account.RecordType.Name =&apos;Publisher&apos;))</errorConditionFormula>
+    <errorMessage>Opportunity cannot be created if the Master Account Id is not populated at Account level.</errorMessage>
+</ValidationRule>

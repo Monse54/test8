@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ROO__c</fullName>
+    <label>ROO</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>North America</fullName>
+                <default>false</default>
+                <label>North America</label>
+            </value>
+            <value>
+                <fullName>China</fullName>
+                <default>false</default>
+                <label>China</label>
+            </value>
+            <value>
+                <fullName>SEA</fullName>
+                <default>false</default>
+                <label>SEA</label>
+            </value>
+            <value>
+                <fullName>META</fullName>
+                <default>false</default>
+                <label>META</label>
+            </value>
+            <value>
+                <fullName>Japan</fullName>
+                <default>false</default>
+                <label>Japan</label>
+            </value>
+            <value>
+                <fullName>Korea</fullName>
+                <default>false</default>
+                <label>Korea</label>
+            </value>
+            <value>
+                <fullName>ANZ</fullName>
+                <default>false</default>
+                <label>ANZ</label>
+            </value>
+            <value>
+                <fullName>India</fullName>
+                <default>false</default>
+                <label>India</label>
+            </value>
+            <value>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+                <label>LATAM</label>
+            </value>
+            <value>
+                <fullName>Western Europe</fullName>
+                <default>false</default>
+                <label>Western Europe</label>
+            </value>
+            <value>
+                <fullName>ROW</fullName>
+                <default>false</default>
+                <label>ROW</label>
+            </value>
+            <value>
+                <fullName>Eastern Europe + Russia</fullName>
+                <default>false</default>
+                <label>Eastern Europe + Russia</label>
+            </value>
+            <value>
+                <fullName>APAC Central</fullName>
+                <default>false</default>
+                <label>APAC Central</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

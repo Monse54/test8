@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Privacy_RegionSpecific</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+	ISCHANGED(StageName),
+	ISPICKVAL(StageName , &apos;Negotiation&apos;), 
+	Account.RecordType.Name !=&apos;Publisher&apos;, 
+	OR(
+		AND(
+			Account.BillingCountry=&apos;United States&apos;, 
+			OR(
+				ISBLANK(TEXT(Account.Privacy_Type__c)), 
+				ISBLANK(TEXT(Account.Privacy_Status__c)),
+				NOT(ISPICKVAL(Account.Privacy_Type__c,&apos;CCPA&apos;))
+			)
+		),
+		AND(
+			OR(
+				ISPICKVAL(Account.Account_Sub_Region__c,&apos;Western Europe&apos;),
+				ISPICKVAL(Account.Account_Sub_Region__c,&apos;Eastern Europe + Russia&apos;)
+			), 
+			OR(
+				ISBLANK(TEXT(Account.Privacy_Type__c)), 
+				ISBLANK(TEXT(Account.Privacy_Status__c)),
+				NOT(ISPICKVAL(Account.Privacy_Type__c,&apos;GDPR&apos;))
+			)
+		)
+	)
+)</errorConditionFormula>
+    <errorMessage>Please enter valid value for Privacy Status and Privacy Type fields applicable for your country/region on Account level.</errorMessage>
+</ValidationRule>

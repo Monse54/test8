@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Declining_Studio_required</fullName>
+    <active>false</active>
+    <description>Reason_for_Declining_Studio_required_for  “LOST” Opp</description>
+    <errorConditionFormula>IF( AND($RecordType.Name = &apos;InMobi Studio&apos;,  ISPICKVAL(StageName  , &apos;Dead/Lost&apos;) , ISBLANK(  TEXT(Reason_for_Declining_Studio__c)  ) ),True,False)</errorConditionFormula>
+    <errorMessage>Reason for Declining Studio is required for  &quot;Dead/Lost&quot; Opportunities</errorMessage>
+</ValidationRule>

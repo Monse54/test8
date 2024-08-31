@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Loss_fields_Mandatory</fullName>
+    <active>false</active>
+    <errorConditionFormula>( (RecordTypeId == &apos;01230000000zUbK&apos; || RecordTypeId == &apos;01230000000zUbP&apos;)&amp;&amp;   ISPICKVAL(StageName, &apos;Dead/Lost&apos;)) &amp;&amp;   ( ISPICKVAL(Deal_Winner__c, &apos;&apos;)   || ISBLANK( Reason__c )   || ISBLANK( Comments__c ) )</errorConditionFormula>
+    <errorMessage>Please mention Reason for Loss, Deal Winner and put comments.</errorMessage>
+</ValidationRule>

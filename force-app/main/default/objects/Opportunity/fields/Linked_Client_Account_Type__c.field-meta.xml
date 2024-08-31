@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Linked_Client_Account_Type__c</fullName>
+    <externalId>false</externalId>
+    <formula>SUBSTITUTE(TRIM( 
+IF(INCLUDES(Brand_Name1__r.Account_Type__c ,&quot;Agency&quot;),&quot;Agency&quot;,NULL)&amp; 
+IF(INCLUDES(Brand_Name1__r.Account_Type__c ,&quot;Advertiser&quot;),&quot;Advertiser &quot;,NULL)&amp; 
+IF(INCLUDES(Brand_Name1__r.Account_Type__c ,&quot;DSP&quot;),&quot;DSP&quot;,NULL)&amp; 
+IF(INCLUDES(Brand_Name1__r.Account_Type__c ,&quot;Exchange&quot;),&quot;Exchange&quot;,NULL)&amp; 
+IF(INCLUDES(Brand_Name1__r.Account_Type__c ,&quot;SSP&quot;),&quot;SSP &quot;,NULL)&amp; 
+IF(INCLUDES(Brand_Name1__r.Account_Type__c ,&quot;Developer	&quot;),&quot;Developer	&quot;,NULL)&amp; 
+IF(INCLUDES(Brand_Name1__r.Account_Type__c ,&quot;Data Partner&quot;),&quot;Data Partner&quot;,NULL) 
+),&quot; &quot;,&quot;; &quot;)</formula>
+    <label>Linked Client: Account Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

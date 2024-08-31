@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Theme__c</fullName>
+    <label>Theme</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Back to School</fullName>
+                <default>false</default>
+                <label>Back to School</label>
+            </value>
+            <value>
+                <fullName>Holidays</fullName>
+                <default>false</default>
+                <label>Holidays</label>
+            </value>
+            <value>
+                <fullName>Ramadan</fullName>
+                <default>false</default>
+                <label>Ramadan</label>
+            </value>
+            <value>
+                <fullName>Diwali</fullName>
+                <default>false</default>
+                <label>Diwali</label>
+            </value>
+            <value>
+                <fullName>End of Financial Year</fullName>
+                <default>false</default>
+                <label>End of Financial Year</label>
+            </value>
+            <value>
+                <fullName>Easter</fullName>
+                <default>false</default>
+                <label>Easter</label>
+            </value>
+            <value>
+                <fullName>Mother&apos;s Day</fullName>
+                <default>false</default>
+                <label>Mother&apos;s Day</label>
+            </value>
+            <value>
+                <fullName>Valentine&apos;s Day</fullName>
+                <default>false</default>
+                <label>Valentine&apos;s Day</label>
+            </value>
+            <value>
+                <fullName>Summer</fullName>
+                <default>false</default>
+                <label>Summer</label>
+            </value>
+            <value>
+                <fullName>New Years Day</fullName>
+                <default>false</default>
+                <label>New Years Day</label>
+            </value>
+            <value>
+                <fullName>Superbowl</fullName>
+                <default>false</default>
+                <label>Superbowl</label>
+            </value>
+            <value>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+                <label>Public Holiday</label>
+            </value>
+            <value>
+                <fullName>Christmas</fullName>
+                <default>false</default>
+                <label>Christmas</label>
+            </value>
+            <value>
+                <fullName>Olympics</fullName>
+                <default>false</default>
+                <label>Olympics</label>
+            </value>
+            <value>
+                <fullName>World Cup (Rugby)</fullName>
+                <default>false</default>
+                <label>World Cup (Rugby)</label>
+            </value>
+            <value>
+                <fullName>World Cup (Football)</fullName>
+                <default>false</default>
+                <label>World Cup (Football)</label>
+            </value>
+            <value>
+                <fullName>NA_EU_NG_Q2_2020</fullName>
+                <default>false</default>
+                <label>NA_EU_NG_Q2_2020</label>
+            </value>
+            <value>
+                <fullName>BDA_Q2_2020</fullName>
+                <default>false</default>
+                <label>BDA_Q2_2020</label>
+            </value>
+            <value>
+                <fullName>META_Q2_2020</fullName>
+                <default>false</default>
+                <label>META_Q2_2020</label>
+            </value>
+            <value>
+                <fullName>SMB_GA_Q2_2020</fullName>
+                <default>false</default>
+                <label>SMB_GA_Q2_2020</label>
+            </value>
+            <value>
+                <fullName>SMB_GA_Q1_2020</fullName>
+                <default>false</default>
+                <label>SMB_GA_Q1_2020</label>
+            </value>
+            <value>
+                <fullName>NA_EU_NG_Q1_2020</fullName>
+                <default>false</default>
+                <label>NA_EU_NG_Q1_2020</label>
+            </value>
+            <value>
+                <fullName>META_Q1_2020</fullName>
+                <default>false</default>
+                <label>META_Q1_2020</label>
+            </value>
+            <value>
+                <fullName>BDA_Q1_2020</fullName>
+                <default>false</default>
+                <label>BDA_Q1_2020</label>
+            </value>
+            <value>
+                <fullName>BDA_Q4_2019</fullName>
+                <default>false</default>
+                <label>BDA_Q4_2019</label>
+            </value>
+            <value>
+                <fullName>META_Q4_2019</fullName>
+                <default>false</default>
+                <label>META_Q4_2019</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>NA_EU_NG_Q2_2020_NAL</fullName>
+                <default>false</default>
+                <label>NA_EU_NG_Q2_2020_NAL</label>
+            </value>
+            <value>
+                <fullName>NA_EU_NG_Q3_2020</fullName>
+                <default>false</default>
+                <label>NA_EU_NG_Q3_2020</label>
+            </value>
+            <value>
+                <fullName>NA_EU_NG_Q3_2020_NAL</fullName>
+                <default>false</default>
+                <label>NA_EU_NG_Q3_2020_NAL</label>
+            </value>
+            <value>
+                <fullName>META_Q3_2020</fullName>
+                <default>false</default>
+                <label>META_Q3_2020</label>
+            </value>
+            <value>
+                <fullName>SMB_GA_Q3_2020</fullName>
+                <default>false</default>
+                <label>SMB_GA_Q3_2020</label>
+            </value>
+            <value>
+                <fullName>BDA_Q3_2020</fullName>
+                <default>false</default>
+                <label>BDA_Q3_2020</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

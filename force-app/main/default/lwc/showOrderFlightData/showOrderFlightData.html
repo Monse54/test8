@@ -1,0 +1,307 @@
+<template>
+
+
+	<span>
+		<!-- <div title={item.Status__c}> -->
+			<!-- <c-custom-lookup-lwc icon-name="standard:account"
+					s-object-api-name="OrderItem"
+					label="Status"
+					status-values="true"
+					name="Status__c"
+					onstatusupdate={fetchValue}
+					display-field="Status__c">
+				</c-custom-lookup-lwc> -->
+		<!-- </div> -->
+	</span>
+<table class="slds-table slds-table_header-fixed slds-table_bordered slds-table_edit slds-table_resizable-cols" style="width:100%">
+	<tr style="background: rgb(243, 243, 243);font-size: large;">
+		<th>Expand</th>
+		<th></th>
+		<th>Order Line Item</th>
+		<th>Order Product</th>
+		<th>Order Sub Product</th>
+		<th>Placement Name</th>
+		<th>Cost Type</th>
+		<th>Budget</th>
+		<th>Quantity</th>
+		<th>UnitPrice</th>
+		<th>Sales Price</th>
+		<th>Impressions</th>
+		<th>List Price</th>
+		<th>Order Start Date</th>
+		<th>Order End Date</th>
+		<th>Order Status</th>
+	</tr>
+	
+	<template for:each={orders} for:item="item">
+		<tr key={item.Id} class="slds-hint-parent" ondblclick={onDoubleClickEdit}>
+
+			<td>
+				<!-- <button  type="button" title="Add FlightItem" slot="actions" data-name={item.Id} class="slds-button slds-button_brand temclass" id={item.Id} onclick={addFlightItem}>+ OF</button>	 -->
+				<!-- <a onclick={handleConfirmDialog} -->
+						<!-- data-id={item.Id}> -->
+				<lightning-button-icon id={item.Id} data-rowid={item.Id} icon-name="utility:chevronright" onclick={showOrHideChildrenRows} data-expanded="false" alternative-text="expand"></lightning-button-icon>
+				<lightning-button-icon id={item.Id} data-name={item.Id} icon-name="utility:new" variant="brand" alternative-text="Add FlightItem" title="Add FlightItem" onclick={addFlightItem}> </lightning-button-icon>
+					<!-- </a> -->
+			</td>
+			<td> <lightning-button-icon id={item.Id} data-id={item.Id} icon-name="utility:delete" variant="bare" alternative-text="Delete" title="Delete" onclick={confirmOrderItemDelete}> </lightning-button-icon></td>
+				<td >
+					<div  title={item.OrderItemNumber}>
+							<c-lookup-on-order-items
+								order-item-boolean="true"
+								unique-key={item.Id} 
+								order-value={item.OrderItemNumber}
+								value-id={_recordId} 
+								icon-name="custom:custom85" 
+								onvalueselect={handleSelection}
+								create-record=true>
+							</c-lookup-on-order-items>
+						<!-- </template> -->
+					</div>
+					<!-- {item.OrderItemNumber} -->
+				</td>
+				<td >
+					<!-- <span> -->
+						<div title={item.Oli_Product__c}>
+							<c-custom-lookup-lwc icon-name="standard:account"
+								s-object-api-name="Product_Price_List__c"
+								label="Product Type"
+								name="Product__c"
+								onlookupupdate={handleInputChange}
+								display-field="Product_Type__c"
+								placeholder="Search Product Type here..."
+								same-display-db="true"
+								default-value={item.Oli_Product__c}
+								data-id={item.Id}
+								>
+							</c-custom-lookup-lwc>
+						</div>
+					<!-- </span> -->
+				</td>
+				<td>
+					<!-- <span> -->
+						<div title={item.Oli_Sub_Product__c}>
+							<c-custom-lookup-lwc icon-name="standard:account"
+								s-object-api-name="Product_Price_List__c"
+								label="Sub Product"
+								name="Sub_Product__c"
+								onlookupupdate={handleInputChange}
+								display-field="Product_Sub_Type__r.Name"
+								db-value-field="Product_Sub_Type__r.Id"
+								placeholder="Search Sub Product..."
+								default-value={item.Oli_Sub_Product__c}
+								data-id={item.Id}
+								name-lookup-object="Product2">
+							</c-custom-lookup-lwc>
+						</div>
+					<!-- </span> -->
+				</td>
+				<td ><lightning-input name="Placement__c" data-id={item.Id} type="text" value={item.Oli_Placement__c} onchange={handleInputChange}></lightning-input></td>
+				<td >
+					<div title={item.Cost_Type__c}>
+						<c-custom-lookup-lwc icon-name="standard:account"
+								s-object-api-name="Product_Price_List__c"
+								label="Cost Type"
+								name="Cost_Type__c"
+								onlookupupdate={handleInputChange}
+								display-field="Pricing_Model__c"
+								same-display-db="true"
+								placeholder="Search Cost Type..."
+								default-value={item.Oli_Cost_Type__c}
+								data-id={item.Id}>
+							</c-custom-lookup-lwc>
+						<!-- <c-custom-lookup-lwc icon-name="standard:account"
+								s-object-api-name="Product_Price_List__c"
+								label="Cost Type"
+								name="Cost_Type__c"
+								onlookupupdate={fetchValue}
+								display-field="Pricing_Model__c"
+								placeholder="Search Cost Type here...">
+							</c-custom-lookup-lwc> -->
+					</div>
+				</td>
+				<td ><lightning-input name="Budget__c" data-id={item.Id} type="number" value={item.Oli_Budget__c} onchange={handleInputChange} onkeyup={handleInputValue}></lightning-input></td>
+				<td ><lightning-input name="Quantity" data-id={item.Id} type="number" value={item.Oli_Quantity} onchange={handleInputChange} disabled></lightning-input></td>
+				<td ><lightning-input name="UnitPrice" data-id={item.Id} type="number" value={item.UnitPrice} onchange={handleInputChange} disabled></lightning-input></td>
+				<td ><lightning-input name="Sales_Price__c" data-id={item.Id} type="number" value={item.Sales_Price__c} onchange={handleInputChange} onkeyup={handleInputValue}></lightning-input></td>
+				<td ><lightning-input name="Impressions__c" data-id={item.Id} type="number" value={item.Impressions__c} onchange={handleInputChange}></lightning-input></td>
+				<td ><lightning-input name="List_Price__c" data-id={item.Id} type="number" value={item.List_Price__c} onchange={handleInputChange}></lightning-input></td>
+				<td ><lightning-input name="Start_Date__c" data-id={item.Id} type="date" value={item.Oli_Start_Date__c} onchange={handleInputChange}></lightning-input></td>	
+				<td ><lightning-input name="End_Date__c" data-id={item.Id} type="date" value={item.Oli_End_Date__c} onchange={handleInputChange}></lightning-input></td>
+				<td >
+						<div title={item.Oli_Status__c}>
+							<lightning-combobox
+								name="Status__c"
+								label="Status"
+								value={item.Oli_Status__c}
+								placeholder="Select Status"
+								options={statusOptions}
+								onchange={handleInputChange}
+								data-id={item.Id} ></lightning-combobox>
+							<!-- <c-custom-lookup-lwc icon-name="standard:account"
+									s-object-api-name="OrderItem"
+									label="Status"
+									status-values="true"
+									name="Status__c"
+									onlookupupdate={handleInputChange}
+									display-field="Status__c"
+									same-display-db="true"
+									placeholder="Search Status..."
+									default-value={item.Status__c}
+									data-id={item.Id}>
+								</c-custom-lookup-lwc> -->
+						</div>
+					 
+				</td>
+			
+		</tr>
+		<template if:true={item.isVisible}>
+			<tr key={item.Id} style="background: rgb(243, 243, 243);" class={item.rowStyle}>
+				<th itemid={item.Id} data-id={item.Id}></th>
+				<th>Flight Line Item</th>
+				<th>Product</th>
+				<th>Sub Product</th>
+				<th>Target GEO</th>
+				<th>ROO</th>
+				<th>Cost Type</th>
+				<th>Budget</th>
+				<th>Quantity</th>
+				<th>Placement</th>
+				<th>Channel </th>
+				<th>Price</th>
+				<th>Start Date</th>
+				<th>End Date</th>
+				<th>Channel Account</th>
+			</tr>
+			<template for:each={item.orderdetailch} for:item="orc">
+				>>>**{item.rowStyle}
+				<tr key={item.Id} class={item.rowStyle}>
+					<td> <lightning-button-icon id={orc.orderFlightId} data-id={orc.orderFlightId} icon-name="utility:delete" variant="bare" alternative-text="Delete" title="Delete" onclick={confirmFlightItemDelete}> </lightning-button-icon></td>
+					<td ><lightning-input name="Name" data-id={orc.orderFlightId} type="text" value={orc.Name} onchange={handleInputChange} disabled></lightning-input></td>
+					<td >
+						<!-- <span> -->
+							<!-- <div title={item.Oli_Sub_Product__c}> -->
+								<c-custom-lookup-lwc icon-name="standard:account"
+								s-object-api-name="Product_Price_List__c"
+								label="Product Type"
+								name="Product__c"
+								onlookupupdate={handleInputChange}
+								display-field="Product_Type__c"
+								placeholder="Search Product Type here..."
+								same-display-db="true"
+								default-value={orc.Fli_Product__c}
+								data-id={orc.orderFlightId}
+								>
+							</c-custom-lookup-lwc>
+								<!-- <c-custom-lookup-lwc icon-name="standard:account"
+										s-object-api-name="Product_Price_List__c"
+										label="Product Type"
+										name="Product__c"
+										onlookupupdate={fetchValue}
+										display-field="Product_Type__c"
+										placeholder="Search Product Type here...">
+									</c-custom-lookup-lwc> -->
+							<!-- </div> -->
+						<!-- </span> -->
+					</td>
+					<td >
+						<!-- <span> -->
+							<!-- <div title={item.Oli_Sub_Product__c}> -->
+								<c-custom-lookup-lwc icon-name="standard:account"
+								s-object-api-name="Product_Price_List__c"
+								label="Sub Product"
+								name="Sub_Product__c"
+								onlookupupdate={handleInputChange}
+								display-field="Product_Sub_Type__r.Name"
+								db-value-field="Product_Sub_Type__r.Id"
+								placeholder="Search Sub Product..."
+								default-value={orc.Fli_Sub_Product__c}
+								data-id={orc.orderFlightId}
+								name-lookup-object="Product2">
+							</c-custom-lookup-lwc>
+								<!-- <c-custom-lookup-lwc icon-name="standard:account"
+										s-object-api-name="Product_Price_List__c"
+										label="Sub Product Type"
+										name="Product_Sub_Type__c"
+										onlookupupdate={fetchValue}
+										display-field="Product_Sub_Type__r.Name"
+										placeholder="Search Sub Product Type here...">
+									</c-custom-lookup-lwc> -->
+							<!-- </div> -->
+						<!-- </span> -->
+					</td>
+					<td >
+						<!-- <lightning-input name="Target_GEO__c" data-id={orc.orderFlightId} type="text" value={orc.Target_GEO__c} onchange={handleInputChange}></lightning-input> -->
+						<c-custom-lookup-lwc icon-name="standard:account"
+								s-object-api-name="Product_Price_List__c"
+								label="Geo"
+								name="Target_GEO__c"
+								onlookupupdate={handleInputChange}
+								display-field="Geo__c"
+								same-display-db="true"
+								placeholder="Search..."
+								default-value={orc.Target_GEO__c}
+								data-id={orc.orderFlightId}>
+							</c-custom-lookup-lwc>
+					</td>
+					<td >
+						<!-- <lightning-input name="ROO__c" data-id={orc.orderFlightId} type="text" value={orc.ROO__c} onchange={handleInputChange}></lightning-input> -->
+						<c-custom-lookup-lwc icon-name="standard:account"
+								s-object-api-name="Product_Price_List__c"
+								label="ROO"
+								name="ROO__c"
+								onlookupupdate={handleInputChange}
+								display-field="ROO__c"
+								same-display-db="true"
+								placeholder="Search..."
+								default-value={orc.ROO__c}
+								data-id={orc.orderFlightId}>
+							</c-custom-lookup-lwc>
+					</td>
+					<td >
+						<c-custom-lookup-lwc icon-name="standard:account"
+								s-object-api-name="Product_Price_List__c"
+								label="Cost Type"
+								name="Cost_Type__c"
+								onlookupupdate={handleInputChange}
+								display-field="Pricing_Model__c"
+								same-display-db="true"
+								placeholder="Search Cost Type..."
+								default-value={orc.Fli_Cost_Type__c}
+								data-id={orc.orderFlightId}>
+							</c-custom-lookup-lwc>
+					</td>
+					<td ><lightning-input name="Budget__c" data-id={orc.orderFlightId} type="number" value={orc.Fli_Budget__c} onchange={handleInputChange} ></lightning-input></td>	
+					<td ><lightning-input name="Quantity__c" data-id={orc.orderFlightId} type="text" value={orc.Quantity__c} onchange={handleInputChange}></lightning-input></td>
+					<td ><lightning-input name="Placement__c" data-id={orc.orderFlightId} type="text" value={orc.Fli_Placement__c} onchange={handleInputChange}></lightning-input></td>
+					<td ><lightning-input name="Channel__c" data-id={orc.orderFlightId} type="text" value={orc.Channel__c} onchange={handleInputChange}></lightning-input></td>
+					<td ><lightning-input name="Price__c" data-id={orc.orderFlightId} type="number" value={orc.Price__c} onchange={handleInputChange}></lightning-input></td>
+					<td ><lightning-input name="Start_Date__c" data-id={orc.orderFlightId} type="date" value={orc.Fli_Start_Date__c} onchange={handleInputChange}></lightning-input></td>	
+					<td ><lightning-input name="End_Date__c" data-id={orc.orderFlightId} type="date" value={orc.Fli_End_Date__c} onchange={handleInputChange}></lightning-input></td>
+					<td >
+						<c-custom-lookup-lwc icon-name="standard:account"
+						s-object-api-name="Order_Flight__c"
+						label="Channel Account"
+						name="Channel_Account__c"
+						onlookupupdate={handleInputChange}
+						display-field="Channel_Account__r.Name"
+						db-value-field="Channel_Account__r.Id"
+						placeholder="Search..."
+						default-value={orc.Channel_Account__c}
+						data-id={orc.orderFlightId}>
+					</c-custom-lookup-lwc>
+					</td>
+				</tr>
+			</template>
+        </template>
+	</template>
+	
+  </table>
+
+  <button type="button" title="Add OrderItem" slot="actions" class="slds-button slds-button_brand temclass" onclick={add}>Add OrderItem</button>
+  <button 
+  type="button" title="Save" slot="actions" class="slds-button slds-button_brand temclass"
+	  onclick={handleSave}> Save
+  </button>
+
+</template>

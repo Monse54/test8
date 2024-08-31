@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Type_is_Mandatory</fullName>
+    <active>false</active>
+    <description>Account Type is Mandatory while creating any new Opportunity</description>
+    <errorConditionFormula>ISBLANK(Account.Account_Type__c ) &amp;&amp; (Account.RecordType.DeveloperName == &apos;Advertiser&apos; || 
+Account.RecordType.DeveloperName == &apos;&apos; )</errorConditionFormula>
+    <errorMessage>Please choose Account Type on related Account to create/edit any Opportunity</errorMessage>
+</ValidationRule>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Geo_Targeting_Capability__c</fullName>
+    <description>Created as part of Supply 2.0 changes</description>
+    <label>Geo Targeting Capability</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LAT/LONG</fullName>
+                <default>false</default>
+                <label>LAT/LONG</label>
+            </value>
+            <value>
+                <fullName>WiFi</fullName>
+                <default>false</default>
+                <label>WiFi</label>
+            </value>
+            <value>
+                <fullName>City</fullName>
+                <default>false</default>
+                <label>City</label>
+            </value>
+            <value>
+                <fullName>State</fullName>
+                <default>false</default>
+                <label>State</label>
+            </value>
+            <value>
+                <fullName>Zip Code</fullName>
+                <default>false</default>
+                <label>Zip Code</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

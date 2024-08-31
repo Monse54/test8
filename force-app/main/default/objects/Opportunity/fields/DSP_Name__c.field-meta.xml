@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DSP_Name__c</fullName>
+    <label>DSP Name</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Facebook Ads Manager</fullName>
+                <default>false</default>
+                <label>Facebook Ads Manager</label>
+            </value>
+            <value>
+                <fullName>161MEDIA B.V. (m)</fullName>
+                <default>false</default>
+                <label>161MEDIA B.V. (m)</label>
+            </value>
+            <value>
+                <fullName>4info</fullName>
+                <default>false</default>
+                <label>4info</label>
+            </value>
+            <value>
+                <fullName>Aarki</fullName>
+                <default>false</default>
+                <label>Aarki</label>
+            </value>
+            <value>
+                <fullName>Active Agent AG</fullName>
+                <default>false</default>
+                <label>Active Agent AG</label>
+            </value>
+            <value>
+                <fullName>Addictive Mobility</fullName>
+                <default>false</default>
+                <label>Addictive Mobility</label>
+            </value>
+            <value>
+                <fullName>AdElement</fullName>
+                <default>false</default>
+                <label>AdElement</label>
+            </value>
+            <value>
+                <fullName>Adelphic Inc. (m) (mobile only)</fullName>
+                <default>false</default>
+                <label>Adelphic Inc. (m) (mobile only)</label>
+            </value>
+            <value>
+                <fullName>Adfalcon</fullName>
+                <default>false</default>
+                <label>Adfalcon</label>
+            </value>
+            <value>
+                <fullName>Adform</fullName>
+                <default>false</default>
+                <label>Adform</label>
+            </value>
+            <value>
+                <fullName>AdGear (Bloom Digital Platforms)</fullName>
+                <default>false</default>
+                <label>AdGear (Bloom Digital Platforms)</label>
+            </value>
+            <value>
+                <fullName>AdMixer</fullName>
+                <default>false</default>
+                <label>AdMixer</label>
+            </value>
+            <value>
+                <fullName>Adobe</fullName>
+                <default>false</default>
+                <label>Adobe</label>
+            </value>
+            <value>
+                <fullName>AdTheorent</fullName>
+                <default>false</default>
+                <label>AdTheorent</label>
+            </value>
+            <value>
+                <fullName>Advertising.com (m)</fullName>
+                <default>false</default>
+                <label>Advertising.com (m)</label>
+            </value>
+            <value>
+                <fullName>Adzmedia</fullName>
+                <default>false</default>
+                <label>Adzmedia</label>
+            </value>
+            <value>
+                <fullName>Amazon</fullName>
+                <default>false</default>
+                <label>Amazon</label>
+            </value>
+            <value>
+                <fullName>Appier Inc.</fullName>
+                <default>false</default>
+                <label>Appier Inc.</label>
+            </value>
+            <value>
+                <fullName>Applift</fullName>
+                <default>false</default>
+                <label>Applift</label>
+            </value>
+            <value>
+                <fullName>Appnexus</fullName>
+                <default>false</default>
+                <label>Appnexus</label>
+            </value>
+            <value>
+                <fullName>Appreciate</fullName>
+                <default>false</default>
+                <label>Appreciate</label>
+            </value>
+            <value>
+                <fullName>avaz</fullName>
+                <default>false</default>
+                <label>avaz</label>
+            </value>
+            <value>
+                <fullName>Axonix</fullName>
+                <default>false</default>
+                <label>Axonix</label>
+            </value>
+            <value>
+                <fullName>Beeswax.io</fullName>
+                <default>false</default>
+                <label>Beeswax.io</label>
+            </value>
+            <value>
+                <fullName>Bidsopts</fullName>
+                <default>false</default>
+                <label>Bidsopts</label>
+            </value>
+            <value>
+                <fullName>Bidstalk Pte Ltd</fullName>
+                <default>false</default>
+                <label>Bidstalk Pte Ltd</label>
+            </value>
+            <value>
+                <fullName>BidTheatre AB</fullName>
+                <default>false</default>
+                <label>BidTheatre AB</label>
+            </value>
+            <value>
+                <fullName>Blis</fullName>
+                <default>false</default>
+                <label>Blis</label>
+            </value>
+            <value>
+                <fullName>Blis Media Limited</fullName>
+                <default>false</default>
+                <label>Blis Media Limited</label>
+            </value>
+            <value>
+                <fullName>Brave</fullName>
+                <default>false</default>
+                <label>Brave</label>
+            </value>
+            <value>
+                <fullName>Bucksense</fullName>
+                <default>false</default>
+                <label>Bucksense</label>
+            </value>
+            <value>
+                <fullName>Chalk Digital</fullName>
+                <default>false</default>
+                <label>Chalk Digital</label>
+            </value>
+            <value>
+                <fullName>Comet</fullName>
+                <default>false</default>
+                <label>Comet</label>
+            </value>
+            <value>
+                <fullName>Conversant</fullName>
+                <default>false</default>
+                <label>Conversant</label>
+            </value>
+            <value>
+                <fullName>Conversant API Partner</fullName>
+                <default>false</default>
+                <label>Conversant API Partner</label>
+            </value>
+            <value>
+                <fullName>Conversant Media</fullName>
+                <default>false</default>
+                <label>Conversant Media</label>
+            </value>
+            <value>
+                <fullName>CPX Interactive</fullName>
+                <default>false</default>
+                <label>CPX Interactive</label>
+            </value>
+            <value>
+                <fullName>Criteo Europe</fullName>
+                <default>false</default>
+                <label>Criteo Europe</label>
+            </value>
+            <value>
+                <fullName>Criteo USA</fullName>
+                <default>false</default>
+                <label>Criteo USA</label>
+            </value>
+            <value>
+                <fullName>DataXu (m)</fullName>
+                <default>false</default>
+                <label>DataXu (m)</label>
+            </value>
+            <value>
+                <fullName>Decenterads</fullName>
+                <default>false</default>
+                <label>Decenterads</label>
+            </value>
+            <value>
+                <fullName>DelPlaya</fullName>
+                <default>false</default>
+                <label>DelPlaya</label>
+            </value>
+            <value>
+                <fullName>Delta Projects AB</fullName>
+                <default>false</default>
+                <label>Delta Projects AB</label>
+            </value>
+            <value>
+                <fullName>Doubleclick Bid Manager (Invite Media 2)</fullName>
+                <default>false</default>
+                <label>Doubleclick Bid Manager (Invite Media 2)</label>
+            </value>
+            <value>
+                <fullName>Downstream.ai</fullName>
+                <default>false</default>
+                <label>Downstream.ai</label>
+            </value>
+            <value>
+                <fullName>Dstillery, Inc.</fullName>
+                <default>false</default>
+                <label>Dstillery, Inc.</label>
+            </value>
+            <value>
+                <fullName>Ebizu India</fullName>
+                <default>false</default>
+                <label>Ebizu India</label>
+            </value>
+            <value>
+                <fullName>Edge226</fullName>
+                <default>false</default>
+                <label>Edge226</label>
+            </value>
+            <value>
+                <fullName>Emerse</fullName>
+                <default>false</default>
+                <label>Emerse</label>
+            </value>
+            <value>
+                <fullName>EPOM</fullName>
+                <default>false</default>
+                <label>EPOM</label>
+            </value>
+            <value>
+                <fullName>EQ Advertising</fullName>
+                <default>false</default>
+                <label>EQ Advertising</label>
+            </value>
+            <value>
+                <fullName>Extend.tv</fullName>
+                <default>false</default>
+                <label>Extend.tv</label>
+            </value>
+            <value>
+                <fullName>Eyeview</fullName>
+                <default>false</default>
+                <label>Eyeview</label>
+            </value>
+            <value>
+                <fullName>EyeviewDigital</fullName>
+                <default>false</default>
+                <label>EyeviewDigital</label>
+            </value>
+            <value>
+                <fullName>Feature Forward</fullName>
+                <default>false</default>
+                <label>Feature Forward</label>
+            </value>
+            <value>
+                <fullName>Fractional Media</fullName>
+                <default>false</default>
+                <label>Fractional Media</label>
+            </value>
+            <value>
+                <fullName>Front Porch, Inc.</fullName>
+                <default>false</default>
+                <label>Front Porch, Inc.</label>
+            </value>
+            <value>
+                <fullName>GetIntent</fullName>
+                <default>false</default>
+                <label>GetIntent</label>
+            </value>
+            <value>
+                <fullName>Gotham Ads -</fullName>
+                <default>false</default>
+                <label>Gotham Ads -</label>
+            </value>
+            <value>
+                <fullName>GroundTruth</fullName>
+                <default>false</default>
+                <label>GroundTruth</label>
+            </value>
+            <value>
+                <fullName>Hybrid</fullName>
+                <default>false</default>
+                <label>Hybrid</label>
+            </value>
+            <value>
+                <fullName>Infectious Media Ltd</fullName>
+                <default>false</default>
+                <label>Infectious Media Ltd</label>
+            </value>
+            <value>
+                <fullName>IPONWEB</fullName>
+                <default>false</default>
+                <label>IPONWEB</label>
+            </value>
+            <value>
+                <fullName>Jampp</fullName>
+                <default>false</default>
+                <label>Jampp</label>
+            </value>
+            <value>
+                <fullName>Juice Mobile</fullName>
+                <default>false</default>
+                <label>Juice Mobile</label>
+            </value>
+            <value>
+                <fullName>LD Mobile</fullName>
+                <default>false</default>
+                <label>LD Mobile</label>
+            </value>
+            <value>
+                <fullName>Liftoff</fullName>
+                <default>false</default>
+                <label>Liftoff</label>
+            </value>
+            <value>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+                <label>LinkedIn</label>
+            </value>
+            <value>
+                <fullName>LiquidM Technology</fullName>
+                <default>false</default>
+                <label>LiquidM Technology</label>
+            </value>
+            <value>
+                <fullName>LoopMe</fullName>
+                <default>false</default>
+                <label>LoopMe</label>
+            </value>
+            <value>
+                <fullName>Lucid Media (m)</fullName>
+                <default>false</default>
+                <label>Lucid Media (m)</label>
+            </value>
+            <value>
+                <fullName>Madgic</fullName>
+                <default>false</default>
+                <label>Madgic</label>
+            </value>
+            <value>
+                <fullName>Magnetic Media Online Inc</fullName>
+                <default>false</default>
+                <label>Magnetic Media Online Inc</label>
+            </value>
+            <value>
+                <fullName>Manage</fullName>
+                <default>false</default>
+                <label>Manage</label>
+            </value>
+            <value>
+                <fullName>Manage.com Group LLC (m)</fullName>
+                <default>false</default>
+                <label>Manage.com Group LLC (m)</label>
+            </value>
+            <value>
+                <fullName>Mars Technologies Ltd</fullName>
+                <default>false</default>
+                <label>Mars Technologies Ltd</label>
+            </value>
+            <value>
+                <fullName>MaxPoint Interactive</fullName>
+                <default>false</default>
+                <label>MaxPoint Interactive</label>
+            </value>
+            <value>
+                <fullName>MediaMath</fullName>
+                <default>false</default>
+                <label>MediaMath</label>
+            </value>
+            <value>
+                <fullName>Mediasmart Mobile S.L.</fullName>
+                <default>false</default>
+                <label>Mediasmart Mobile S.L.</label>
+            </value>
+            <value>
+                <fullName>MEME Global</fullName>
+                <default>false</default>
+                <label>MEME Global</label>
+            </value>
+            <value>
+                <fullName>Mobile Professionals</fullName>
+                <default>false</default>
+                <label>Mobile Professionals</label>
+            </value>
+            <value>
+                <fullName>Mobile Space Ltd</fullName>
+                <default>false</default>
+                <label>Mobile Space Ltd</label>
+            </value>
+            <value>
+                <fullName>Moloco, Inc</fullName>
+                <default>false</default>
+                <label>Moloco, Inc</label>
+            </value>
+            <value>
+                <fullName>Native Touch</fullName>
+                <default>false</default>
+                <label>Native Touch</label>
+            </value>
+            <value>
+                <fullName>NinthDecimal</fullName>
+                <default>false</default>
+                <label>NinthDecimal</label>
+            </value>
+            <value>
+                <fullName>Placecast</fullName>
+                <default>false</default>
+                <label>Placecast</label>
+            </value>
+            <value>
+                <fullName>PlaceIQ</fullName>
+                <default>false</default>
+                <label>PlaceIQ</label>
+            </value>
+            <value>
+                <fullName>PocketMath</fullName>
+                <default>false</default>
+                <label>PocketMath</label>
+            </value>
+            <value>
+                <fullName>Pokkt India</fullName>
+                <default>false</default>
+                <label>Pokkt India</label>
+            </value>
+            <value>
+                <fullName>Powerlinks</fullName>
+                <default>false</default>
+                <label>Powerlinks</label>
+            </value>
+            <value>
+                <fullName>PulsePoint</fullName>
+                <default>false</default>
+                <label>PulsePoint</label>
+            </value>
+            <value>
+                <fullName>Remerge GmbH</fullName>
+                <default>false</default>
+                <label>Remerge GmbH</label>
+            </value>
+            <value>
+                <fullName>Revx India</fullName>
+                <default>false</default>
+                <label>Revx India</label>
+            </value>
+            <value>
+                <fullName>RhythmOne</fullName>
+                <default>false</default>
+                <label>RhythmOne</label>
+            </value>
+            <value>
+                <fullName>RocketFuel</fullName>
+                <default>false</default>
+                <label>RocketFuel</label>
+            </value>
+            <value>
+                <fullName>RunDSP</fullName>
+                <default>false</default>
+                <label>RunDSP</label>
+            </value>
+            <value>
+                <fullName>Sabio Mobile</fullName>
+                <default>false</default>
+                <label>Sabio Mobile</label>
+            </value>
+            <value>
+                <fullName>Sift</fullName>
+                <default>false</default>
+                <label>Sift</label>
+            </value>
+            <value>
+                <fullName>silvermob</fullName>
+                <default>false</default>
+                <label>silvermob</label>
+            </value>
+            <value>
+                <fullName>Simplifi</fullName>
+                <default>false</default>
+                <label>Simplifi</label>
+            </value>
+            <value>
+                <fullName>SiteScout, Inc.</fullName>
+                <default>false</default>
+                <label>SiteScout, Inc.</label>
+            </value>
+            <value>
+                <fullName>SITO Mobile</fullName>
+                <default>false</default>
+                <label>SITO Mobile</label>
+            </value>
+            <value>
+                <fullName>SmadexHouse</fullName>
+                <default>false</default>
+                <label>SmadexHouse</label>
+            </value>
+            <value>
+                <fullName>SmartyAds</fullName>
+                <default>false</default>
+                <label>SmartyAds</label>
+            </value>
+            <value>
+                <fullName>Sociomantic</fullName>
+                <default>false</default>
+                <label>Sociomantic</label>
+            </value>
+            <value>
+                <fullName>Somo Audience</fullName>
+                <default>false</default>
+                <label>Somo Audience</label>
+            </value>
+            <value>
+                <fullName>Somo Audience - Mobile</fullName>
+                <default>false</default>
+                <label>Somo Audience - Mobile</label>
+            </value>
+            <value>
+                <fullName>Somo Audience SDK</fullName>
+                <default>false</default>
+                <label>Somo Audience SDK</label>
+            </value>
+            <value>
+                <fullName>SparcMedia</fullName>
+                <default>false</default>
+                <label>SparcMedia</label>
+            </value>
+            <value>
+                <fullName>SpotAd</fullName>
+                <default>false</default>
+                <label>SpotAd</label>
+            </value>
+            <value>
+                <fullName>Spot Ad</fullName>
+                <default>false</default>
+                <label>Spot Ad</label>
+            </value>
+            <value>
+                <fullName>StackAdapt</fullName>
+                <default>false</default>
+                <label>StackAdapt</label>
+            </value>
+            <value>
+                <fullName>StartApp</fullName>
+                <default>false</default>
+                <label>StartApp</label>
+            </value>
+            <value>
+                <fullName>TabMo</fullName>
+                <default>false</default>
+                <label>TabMo</label>
+            </value>
+            <value>
+                <fullName>Taptap Networks S.L.</fullName>
+                <default>false</default>
+                <label>Taptap Networks S.L.</label>
+            </value>
+            <value>
+                <fullName>TheTradeDesk</fullName>
+                <default>false</default>
+                <label>TheTradeDesk</label>
+            </value>
+            <value>
+                <fullName>TheTradeDesk2</fullName>
+                <default>false</default>
+                <label>TheTradeDesk2</label>
+            </value>
+            <value>
+                <fullName>Thinknear</fullName>
+                <default>false</default>
+                <label>Thinknear</label>
+            </value>
+            <value>
+                <fullName>Trademob GmbH</fullName>
+                <default>false</default>
+                <label>Trademob GmbH</label>
+            </value>
+            <value>
+                <fullName>Traffic Steer Inc</fullName>
+                <default>false</default>
+                <label>Traffic Steer Inc</label>
+            </value>
+            <value>
+                <fullName>Triapodi</fullName>
+                <default>false</default>
+                <label>Triapodi</label>
+            </value>
+            <value>
+                <fullName>TubeMogul Video</fullName>
+                <default>false</default>
+                <label>TubeMogul Video</label>
+            </value>
+            <value>
+                <fullName>Turn</fullName>
+                <default>false</default>
+                <label>Turn</label>
+            </value>
+            <value>
+                <fullName>UAB AKTYVUS SEKTORIUS</fullName>
+                <default>false</default>
+                <label>UAB AKTYVUS SEKTORIUS</label>
+            </value>
+            <value>
+                <fullName>UberMedia</fullName>
+                <default>false</default>
+                <label>UberMedia</label>
+            </value>
+            <value>
+                <fullName>UberMedia Inc</fullName>
+                <default>false</default>
+                <label>UberMedia Inc</label>
+            </value>
+            <value>
+                <fullName>Ubimo Ltd</fullName>
+                <default>false</default>
+                <label>Ubimo Ltd</label>
+            </value>
+            <value>
+                <fullName>Verve</fullName>
+                <default>false</default>
+                <label>Verve</label>
+            </value>
+            <value>
+                <fullName>Verve Valassis</fullName>
+                <default>false</default>
+                <label>Verve Valassis</label>
+            </value>
+            <value>
+                <fullName>Verve Wireless</fullName>
+                <default>false</default>
+                <label>Verve Wireless</label>
+            </value>
+            <value>
+                <fullName>Voluum</fullName>
+                <default>false</default>
+                <label>Voluum</label>
+            </value>
+            <value>
+                <fullName>xAd</fullName>
+                <default>false</default>
+                <label>xAd</label>
+            </value>
+            <value>
+                <fullName>Xapads Media Pte Ltd</fullName>
+                <default>false</default>
+                <label>Xapads Media Pte Ltd</label>
+            </value>
+            <value>
+                <fullName>Yahoo!</fullName>
+                <default>false</default>
+                <label>Yahoo!</label>
+            </value>
+            <value>
+                <fullName>Yandex Europe AG</fullName>
+                <default>false</default>
+                <label>Yandex Europe AG</label>
+            </value>
+            <value>
+                <fullName>Zebestof</fullName>
+                <default>false</default>
+                <label>Zebestof</label>
+            </value>
+            <value>
+                <fullName>Zemanta, Inc</fullName>
+                <default>false</default>
+                <label>Zemanta, Inc</label>
+            </value>
+            <value>
+                <fullName>Centro</fullName>
+                <default>false</default>
+                <label>Centro</label>
+            </value>
+            <value>
+                <fullName>Zeta</fullName>
+                <default>false</default>
+                <label>Zeta</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

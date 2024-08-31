@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Type_Account_Segment_Not_Empty</fullName>
+    <active>false</active>
+    <errorConditionFormula>$Profile.Name != &apos;System Administrator&apos; &amp;&amp; Account.RecordType.DeveloperName = &apos;Advertiser&apos; &amp;&amp;(ISBLANK(Account.Account_Type__c) || ISBLANK( Account.Account_Segment__c))</errorConditionFormula>
+    <errorMessage>Please fill out Account Type and Account Segment of the selected Account.</errorMessage>
+</ValidationRule>

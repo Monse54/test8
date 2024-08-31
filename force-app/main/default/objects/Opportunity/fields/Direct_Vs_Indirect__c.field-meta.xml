@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Direct_Vs_Indirect__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(AccountId =  Brand_Name1__c, &apos;Direct&apos;, &apos;Indirect&apos;)</formula>
+    <label>Direct Vs Indirect</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

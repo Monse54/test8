@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opp_can_be_closed_won_after_Approval</fullName>
+    <active>true</active>
+    <errorConditionFormula>$RecordType.DeveloperName = &apos;SAAS&apos; &amp;&amp;  ISCHANGED(StageName) &amp;&amp; NOT(ISPICKVAL(PRIORVALUE(StageName),&apos;Legal Review&apos;)) &amp;&amp;   ISPICKVAL(StageName, &apos;Closed Won&apos;)</errorConditionFormula>
+    <errorMessage>The opportunity will be closed automatically once Contract is Approved</errorMessage>
+</ValidationRule>

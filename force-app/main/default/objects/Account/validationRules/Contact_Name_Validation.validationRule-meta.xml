@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Name_Validation</fullName>
+    <active>true</active>
+    <description>Validation rule to check if the name of the contact is at least 7 characters</description>
+    <errorConditionFormula>LEN(Billing_Contact_Name__c) &lt; 7</errorConditionFormula>
+    <errorMessage>The name of the contact must be at least 7 characters</errorMessage>
+</ValidationRule>

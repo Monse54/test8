@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Existing_Monetization_Partners_Final__c</fullName>
+    <description>Stores all the Existing Monetization Partners. Populated through AdminClose trigger</description>
+    <externalId>false</externalId>
+    <label>Existing Monetization Partners Final</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Replenishment_Percent_Valid_Range</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISBLANK( Replenishment_Percentage__c ))   &amp;&amp; ( Replenishment_Percentage__c &lt; 0 || Replenishment_Percentage__c &gt; 1 ) &amp;&amp;
+RecordType.DeveloperName == &apos;Demand&apos;</errorConditionFormula>
+    <errorDisplayField>Replenishment_Percentage__c</errorDisplayField>
+    <errorMessage>Replenishment Percentage should be greater than 0 and less than or equal to100%.</errorMessage>
+</ValidationRule>

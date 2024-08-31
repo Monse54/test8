@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_CloseDate</fullName>
+    <active>true</active>
+    <description>Preventing past date for closeDate</description>
+    <errorConditionFormula>AND(ISCHANGED(CloseDate), CloseDate&lt;TODAY(), $Profile.Name&lt;&gt;&apos;System Administrator&apos;)</errorConditionFormula>
+    <errorMessage>Close Date can&apos;t be past date.</errorMessage>
+</ValidationRule>

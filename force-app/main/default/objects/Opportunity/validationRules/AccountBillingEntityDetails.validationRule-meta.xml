@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AccountBillingEntityDetails</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  $Profile.Name != &apos;System Administrator&apos; &amp;&amp;
+	ISCHANGED(StageName), 
+	ISPICKVAL(StageName , &apos;Negotiation&apos;),
+	OR(
+		ISBLANK(Account.BillingCountry),
+		ISBLANK(TEXT(Account.Account_Legal_Entity__c))
+	)
+)</errorConditionFormula>
+    <errorMessage>If Opportunity stage is Negotiation, following fields on Account are mandatory: BillingCountry and Legal Entity.</errorMessage>
+</ValidationRule>

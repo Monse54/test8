@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Linked_Client_Invalid_Account_Type</fullName>
+    <active>false</active>
+    <errorConditionFormula>$Profile.Name != &apos;System Administrator&apos;  &amp;&amp; NOT(ISBLANK(Brand_Name1__c)) &amp;&amp; RecordType.DeveloperName=&apos;Advertiser&apos; &amp;&amp; NOT(
+INCLUDES( Brand_Name1__r.Account_Type__c,&apos;Advertiser&apos;) || 
+INCLUDES( Brand_Name1__r.Account_Type__c,&apos;Programmatic - DCP&apos;) ||
+INCLUDES( Brand_Name1__r.Account_Type__c,&apos;Programmatic - RTB&apos;) 
+)</errorConditionFormula>
+    <errorMessage>Selected Linked Client&apos;s Account Type must be one of the &quot;Advertiser, Programmatic - DCP, Programmatic - RTB&quot;</errorMessage>
+</ValidationRule>

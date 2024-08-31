@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regional_Inventory_Distribution_check</fullName>
+    <active>false</active>
+    <description>Check for Regional Inventory of JAPAC, EMEA and North America. Their sum sum should not be less than 50 and greater than 100</description>
+    <errorConditionFormula>ISPICKVAL(Type,&apos;Publisher&apos;)  &amp;&amp; (( ( JAPAC__c + North_America__c + EMEA__c) &lt; 0.50 )  || ( ( JAPAC__c + North_America__c + EMEA__c) &gt; 1.00))</errorConditionFormula>
+    <errorMessage>Sum of all Regional Inventory Distribution can not be less than 50 or greater than 100</errorMessage>
+</ValidationRule>

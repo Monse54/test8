@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_billing_Info_Account</fullName>
+    <active>true</active>
+    <errorConditionFormula>$Profile.Name != &apos;System Administrator&apos; &amp;&amp; RecordType.Name == &apos;Demand&apos; &amp;&amp; OR(ISBLANK(Account.BillingCity),ISBLANK(Account.BillingStreet), ISBLANK(Account.Billing_Contact__c),ISBLANK(TEXT(Account.Billing_Milestone__c)),ISBLANK(TEXT(Account.Billing_Type__c))) &amp;&amp; ISPICKVAL( StageName ,&apos;Negotiation&apos;)</errorConditionFormula>
+    <errorMessage>For Negotiation stage, following fields are mandatory on account level:
+-Billing Contact,
+-Billing Street,
+-Billing Country,
+-Billing City,
+-Billing Milestone
+-Payment Type</errorMessage>
+</ValidationRule>

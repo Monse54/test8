@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Glance_Oppty_should_have_Glance_Account</fullName>
+    <active>false</active>
+    <description>Glance Opportunity can be created only for Glance accounts</description>
+    <errorConditionFormula>RecordType.DeveloperName=&apos;Glance&apos; &amp;&amp;
+Account.RecordType.DeveloperName!=&apos;Advertiser&apos; &amp;&amp;
+DATEVALUE(CreatedDate)&gt;DATE(2021,02,09)</errorConditionFormula>
+    <errorDisplayField>AccountId</errorDisplayField>
+    <errorMessage>Glance Opportunity must refer only to Glance Accounts</errorMessage>
+</ValidationRule>

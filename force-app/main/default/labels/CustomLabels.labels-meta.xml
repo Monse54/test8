@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AzureExtractionEndPoint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AzureExtractionEndPoint</shortDescription>
+        <value>https://anaplan1.blob.core.windows.net/source/{fileName}?sp=racwl&amp;st=2023-06-01T07:08:03Z&amp;se=2024-06-01T15:08:03Z&amp;spr=https&amp;sv=2022-11-02&amp;sr=c&amp;sig=NRPp1jXnr1K7s%2Fh52TJwkOBgVHKKfh%2FoRuDSir2ocXY%3D</value>
+    </labels>
+    <labels>
+        <fullName>AzureExtractionToEmailNotification</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AzureExtractionToEmailNotification</shortDescription>
+        <value>tushar.k@radix2.tech, vedant.arora@inmobi.com, ansh.m@inmobi.com</value>
+    </labels>
+    <labels>
+        <fullName>BatchClassNamesLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BatchClassNamesLabel</shortDescription>
+        <value>AzureAccountExtractionBatch, AzureOpportunityExtractionBatch</value>
+    </labels>
+</CustomLabels>

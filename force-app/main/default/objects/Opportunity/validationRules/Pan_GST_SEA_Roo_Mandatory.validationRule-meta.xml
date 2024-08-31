@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pan_GST_SEA_Roo_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>RecordType.Name == &apos;Demand&apos; &amp;&amp;
+ISBLANK (Account.GST_Number__c) &amp;&amp;
+Account.BillingCountry=&quot;Singapore&quot; &amp;&amp;
+ISPICKVAL( StageName,&quot;Negotiation&quot;)</errorConditionFormula>
+    <errorMessage>For the Negotiation stage, I&apos;d like you to please fill in GST, which is mandatory information at the account level.</errorMessage>
+</ValidationRule>

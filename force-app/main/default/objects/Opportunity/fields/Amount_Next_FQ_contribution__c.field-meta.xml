@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_Next_FQ_contribution__c</fullName>
+    <formula>IF(((End_Date__c - Launch_Date__c) + 1) &gt; 0,
+	IF(
+		AND(
+			AND(CEILING(MONTH(Launch_Date__c) / 3) = CEILING(MONTH(TODAY()) / 3)+1, YEAR(Launch_Date__c) = YEAR(TODAY())),
+			AND(CEILING(MONTH(End_Date__c) / 3) = CEILING(MONTH(TODAY()) / 3)+1, YEAR(End_Date__c) = YEAR(TODAY()))
+		),
+		Amount,
+		((Amount / ((End_Date__c - Launch_Date__c) + 1)) *
+			(
+				IF(
+					AND(CEILING(MONTH(Launch_Date__c) / 3) = CEILING(MONTH(TODAY()) / 3)+1, YEAR(Launch_Date__c) = YEAR(TODAY())),
+					($Setup.Financial_Quarter__c.NFQ_End_Date__c- Launch_Date__c) + 1,
+					IF(
+						AND(CEILING(MONTH(End_Date__c) / 3) = CEILING(MONTH(TODAY()) / 3)+1, YEAR(End_Date__c) = YEAR(TODAY())),
+						(End_Date__c - $Setup.Financial_Quarter__c.NFQ_Start_Date__c) + 1,
+						IF(	AND(Launch_Date__c &lt; $Setup.Financial_Quarter__c.NFQ_Start_Date__c, End_Date__c &gt; $Setup.Financial_Quarter__c.NFQ_End_Date__c),
+							($Setup.Financial_Quarter__c.NFQ_End_Date__c- $Setup.Financial_Quarter__c.NFQ_Start_Date__c )+1,
+							0
+						)
+					)
+					
+				)
+			)
+		)
+	),
+	0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Amount - Next FQ contribution</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

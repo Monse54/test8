@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason__c</fullName>
+    <label>Lost Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>StageName</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Budget Cut</fullName>
+                <default>false</default>
+                <label>Budget Cut</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Failed Trial</fullName>
+                <default>false</default>
+                <label>Failed Trial</label>
+            </value>
+            <value>
+                <fullName>Integration Issues</fullName>
+                <default>false</default>
+                <label>Integration Issues</label>
+            </value>
+            <value>
+                <fullName>Stopped responding</fullName>
+                <default>false</default>
+                <label>Stopped responding</label>
+            </value>
+            <value>
+                <fullName>No Interest</fullName>
+                <default>false</default>
+                <label>No Interest</label>
+            </value>
+            <value>
+                <fullName>Not a fit (rejected by InMobi)</fullName>
+                <default>false</default>
+                <label>Not a fit (rejected by InMobi)</label>
+            </value>
+            <value>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+                <label>Competitor</label>
+            </value>
+            <value>
+                <fullName>Admin Close</fullName>
+                <default>false</default>
+                <label>Admin Close</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Dead/Lost</controllingFieldValue>
+            <valueName>Budget Cut</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dead/Lost</controllingFieldValue>
+            <valueName>Price</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dead/Lost</controllingFieldValue>
+            <valueName>Failed Trial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dead/Lost</controllingFieldValue>
+            <valueName>Integration Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dead/Lost</controllingFieldValue>
+            <valueName>Stopped responding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dead/Lost</controllingFieldValue>
+            <valueName>No Interest</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dead/Lost</controllingFieldValue>
+            <valueName>Not a fit (rejected by InMobi)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dead/Lost</controllingFieldValue>
+            <valueName>Competitor</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

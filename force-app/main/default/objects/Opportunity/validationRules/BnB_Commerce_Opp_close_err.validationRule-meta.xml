@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BnB_Commerce_Opp_close_err</fullName>
+    <active>false</active>
+    <errorConditionFormula>Number_Of_Contracts__c = 0 &amp;&amp; 
+ISPICKVAL(StageName,&apos;Closed Won&apos;) &amp;&amp;
+($RecordType.DeveloperName = &apos;Supply&apos;)&amp;&amp; 
+ISCHANGED(StageName)</errorConditionFormula>
+    <errorMessage>The opportunity will be closed automatically once the Contract is Approved. Please do create one and submit for Approval</errorMessage>
+</ValidationRule>

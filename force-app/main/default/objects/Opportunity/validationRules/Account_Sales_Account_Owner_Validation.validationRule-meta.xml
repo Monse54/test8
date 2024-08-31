@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Sales_Account_Owner_Validation</fullName>
+    <active>false</active>
+    <description>Sales Account Owner on the Account is mandatory while creating a Demand Sales opportunity</description>
+    <errorConditionFormula>$Profile.Name != &apos;System Administrator&apos; &amp;&amp;
+$RecordType.DeveloperName == &apos;Advertiser&apos; &amp;&amp; 
+(
+INCLUDES(Account.Account_Type__c, &apos;Advertiser&apos;) || 
+INCLUDES(Account.Account_Type__c, &apos;Agency&apos;) ||
+INCLUDES( Account.Account_Type__c,&apos;Programmatic - DCP&apos;) ||
+INCLUDES( Account.Account_Type__c,&apos;Programmatic - RTB&apos;)
+) &amp;&amp; 
+(
+ISBLANK( Account.Sales_Account_Owner__c) || 
+(ISNEW() &amp;&amp; NOT(Account.Sales_Account_Owner__r.IsActive) )
+)</errorConditionFormula>
+    <errorMessage>Please update valid Sales Account Owner on the selected Account.</errorMessage>
+</ValidationRule>

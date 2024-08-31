@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <label>Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Trucks</fullName>
+                <default>false</default>
+                <label>Trucks</label>
+            </value>
+            <value>
+                <fullName>Buyers</fullName>
+                <default>false</default>
+                <label>Buyers</label>
+            </value>
+            <value>
+                <fullName>Audience Extension</fullName>
+                <default>false</default>
+                <label>Audience Extension</label>
+            </value>
+            <value>
+                <fullName>Agency PMP</fullName>
+                <default>false</default>
+                <label>Agency PMP</label>
+            </value>
+            <value>
+                <fullName>Glance</fullName>
+                <default>false</default>
+                <label>Glance</label>
+            </value>
+            <value>
+                <fullName>Blink</fullName>
+                <default>false</default>
+                <label>Blink</label>
+            </value>
+            <value>
+                <fullName>Pulse</fullName>
+                <default>false</default>
+                <label>Pulse</label>
+            </value>
+            <value>
+                <fullName>Microsoft Bing (MSA)</fullName>
+                <default>false</default>
+                <label>Microsoft Bing (MSA)</label>
+            </value>
+            <value>
+                <fullName>Direct Campaign</fullName>
+                <default>false</default>
+                <label>Direct Campaign</label>
+            </value>
+            <value>
+                <fullName>PMP</fullName>
+                <default>false</default>
+                <label>PMP</label>
+            </value>
+            <value>
+                <fullName>Banner</fullName>
+                <default>false</default>
+                <label>Banner</label>
+            </value>
+            <value>
+                <fullName>Full-Screen Video</fullName>
+                <default>false</default>
+                <label>Full-Screen Video</label>
+            </value>
+            <value>
+                <fullName>In-Feed Video Ads</fullName>
+                <default>false</default>
+                <label>In-Feed Video Ads</label>
+            </value>
+            <value>
+                <fullName>Interactive Video Ads</fullName>
+                <default>false</default>
+                <label>Interactive Video Ads</label>
+            </value>
+            <value>
+                <fullName>Interstitial</fullName>
+                <default>false</default>
+                <label>Interstitial</label>
+            </value>
+            <value>
+                <fullName>Native Ads</fullName>
+                <default>false</default>
+                <label>Native Ads</label>
+            </value>
+            <value>
+                <fullName>Playable Ads</fullName>
+                <default>false</default>
+                <label>Playable Ads</label>
+            </value>
+            <value>
+                <fullName>Rewarded Video Ads</fullName>
+                <default>false</default>
+                <label>Rewarded Video Ads</label>
+            </value>
+            <value>
+                <fullName>Splash Ads</fullName>
+                <default>false</default>
+                <label>Splash Ads</label>
+            </value>
+            <value>
+                <fullName>Splash Video Ads</fullName>
+                <default>false</default>
+                <label>Splash Video Ads</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

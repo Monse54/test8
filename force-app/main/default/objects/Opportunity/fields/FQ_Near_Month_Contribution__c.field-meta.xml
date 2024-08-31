@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FQ_Near_Month_Contribution__c</fullName>
+    <formula>IF(
+	((End_Date__c - Launch_Date__c) + 1) &gt; 0,
+	(
+		IF(
+			AND(Launch_Date__c &gt;= $Setup.Financial_Quarter__c.NM_FD__c,$Setup.Financial_Quarter__c.NM_LD__c &gt;= End_Date__c),
+			Amount,
+			(Amount / ((End_Date__c - Launch_Date__c) + 1)) *
+			(IF(
+				Launch_Date__c &lt; $Setup.Financial_Quarter__c.NM_FD__c,
+				(IF(
+					End_Date__c&gt;=$Setup.Financial_Quarter__c.NM_FD__c,
+					(IF(
+						End_Date__c&lt;=$Setup.Financial_Quarter__c.NM_LD__c,
+						(End_Date__c - $Setup.Financial_Quarter__c.NM_FD__c)+1,
+						($Setup.Financial_Quarter__c.NM_LD__c - $Setup.Financial_Quarter__c.NM_FD__c)+1
+					)),
+					0					
+				)),
+				(IF(
+					Launch_Date__c &gt;= $Setup.Financial_Quarter__c.NM_FD__c,
+					(IF(
+						Launch_Date__c &lt;= $Setup.Financial_Quarter__c.NM_LD__c,
+						($Setup.Financial_Quarter__c.NM_LD__c - Launch_Date__c) + 1,
+						0
+					)),
+					0
+				))
+			))
+			
+		)
+	),
+	0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>FQ - Near Month Contribution</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

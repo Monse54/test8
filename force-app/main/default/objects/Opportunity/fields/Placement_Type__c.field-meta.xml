@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Placement_Type__c</fullName>
+    <label>Placement Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Native placement</fullName>
+                <default>false</default>
+                <label>Native placement</label>
+            </value>
+            <value>
+                <fullName>Display banner</fullName>
+                <default>false</default>
+                <label>Display banner</label>
+            </value>
+            <value>
+                <fullName>Sponsored/shoppable Video</fullName>
+                <default>false</default>
+                <label>Sponsored/shoppable Video</label>
+            </value>
+            <value>
+                <fullName>Carousel</fullName>
+                <default>false</default>
+                <label>Carousel</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

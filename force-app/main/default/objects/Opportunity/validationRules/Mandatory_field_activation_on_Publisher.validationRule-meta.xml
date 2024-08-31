@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_field_activation_on_Publisher</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISPICKVAL(Type,&apos;Publisher&apos;) &amp;&amp; ISPICKVAL(StageName,&apos;Proposal&apos;) &amp;&amp; ( ISBLANK( Inventory_Region__c )  || ISBLANK(Device__c)  ||  ISPICKVAL( Device_OS__c,&quot;&quot; ) ||  ISBLANK( Platform__c ))</errorConditionFormula>
+    <errorMessage>Device, Device OS,Platform and Inventory region is mandatory to fill when opportunity reaches proposal stage</errorMessage>
+</ValidationRule>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Interest_Must_NA_Direct_Sales</fullName>
+    <active>false</active>
+    <description>Product Interest field on Opportunity should be mandatory</description>
+    <errorConditionFormula>Account.Rev_Ops_Team__c == &apos;NA Direct Sales Pod&apos; &amp;&amp;
+ISBLANK(Product_Interest__c) &amp;&amp;
+($RecordType.DeveloperName == &apos;Advertiser&apos; || $RecordType.DeveloperName == &apos;Demand&apos;) &amp;&amp;
+$Profile.Name != &apos;System Administrator&apos; &amp;&amp;
+$Profile.Name != &apos;Finance&apos; &amp;&amp;
+DATEVALUE(CreatedDate) &gt;= DATE(2020,10,1)</errorConditionFormula>
+    <errorDisplayField>Product_Interest__c</errorDisplayField>
+    <errorMessage>Please do fill the &quot;Product Interest&quot;</errorMessage>
+</ValidationRule>

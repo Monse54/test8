@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Opp_Acc_and_Linked_blocked</fullName>
+    <active>true</active>
+    <description>Once Opp closed, Account name and the Linked client can not be changed</description>
+    <errorConditionFormula>(ISCHANGED( AccountId ) ||
+ISCHANGED( Brand_Name1__c )) &amp;&amp;
+IsClosed</errorConditionFormula>
+    <errorMessage>Account Name or Linked Client can not be changed on the closed Opportunity 😔</errorMessage>
+</ValidationRule>

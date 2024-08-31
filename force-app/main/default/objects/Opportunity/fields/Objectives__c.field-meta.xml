@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Objectives__c</fullName>
+    <description>For storing Objective on the Opportunity records - as of now visible only to system administrators</description>
+    <label>Objectives</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Generate Awareness</fullName>
+                <default>false</default>
+                <label>Generate Awareness</label>
+            </value>
+            <value>
+                <fullName>App Download</fullName>
+                <default>false</default>
+                <label>App Download</label>
+            </value>
+            <value>
+                <fullName>Generate Leads</fullName>
+                <default>false</default>
+                <label>Generate Leads</label>
+            </value>
+            <value>
+                <fullName>Drive Traffic</fullName>
+                <default>false</default>
+                <label>Drive Traffic</label>
+            </value>
+            <value>
+                <fullName>Promote Content</fullName>
+                <default>false</default>
+                <label>Promote Content</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

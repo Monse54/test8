@@ -1,0 +1,9 @@
+.comboBoxes{ width: 15rem;}
+.customButton{
+    /* background-color: hsl(204, 64%, 40%); */
+    color: #fff; 
+ }
+ 
+:host {
+    --sds-c-textarea-sizing-min-height: 160px;
+ }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Glance_Closure_Validation_Address</fullName>
+    <active>false</active>
+    <description>Glance_Closure_Validation_Address</description>
+    <errorConditionFormula>RecordType.DeveloperName == &apos;Glance&apos; &amp;&amp; ISPICKVAL(StageName, &apos;Closed Won&apos;) &amp;&amp; (ISBLANK(Account.BillingStreet) || ISBLANK((Account.BillingCity)) || ISBLANK(Account.BillingState) || ISBLANK(Account.BillingPostalCode) || ISBLANK((Account.BillingCountry)) || ISBLANK(Account.Billing_Account_Legal_Name__c) || ISBLANK(Account.Billing_Contact__c))</errorConditionFormula>
+    <errorMessage>Please fill the Billing Address fields on Account (Billing Street, City, State, Zip Code, Country, Billing Account Legal Name and Billing Contact) before closing the Opportunity.</errorMessage>
+</ValidationRule>

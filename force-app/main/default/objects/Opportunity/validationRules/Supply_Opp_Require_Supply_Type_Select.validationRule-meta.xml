@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supply_Opp_Require_Supply_Type_Select</fullName>
+    <active>false</active>
+    <errorConditionFormula>!ISNEW() &amp;&amp;
+($RecordType.Name == &apos;New Supply&apos; || 
+$RecordType.Name == &apos;Upsell Supply&apos;) &amp;&amp; 
+ISBLANK((Supply_Type__c)) &amp;&amp;
+ISCHANGED( StageName ) &amp;&amp; 
+(Account.RecordType.DeveloperName == &apos;Enterprise&apos; || 
+Account.RecordType.DeveloperName == &apos;&apos; )</errorConditionFormula>
+    <errorDisplayField>Supply_Type__c</errorDisplayField>
+    <errorMessage>You must select a &apos;Supply Type&apos; for Supply Opportunity.</errorMessage>
+</ValidationRule>

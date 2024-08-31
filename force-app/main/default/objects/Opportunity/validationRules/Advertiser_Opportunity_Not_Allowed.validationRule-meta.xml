@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Advertiser_Opportunity_Not_Allowed</fullName>
+    <active>false</active>
+    <description>when advertiser status is selected as Blocked on account do allow user to create Opportunity of Advertiser Type</description>
+    <errorConditionFormula>IF(AND($RecordType.Name=&apos;Demand&apos;, ISPICKVAL(  Account.Account_Status__c ,&apos;Pipeline&apos; ) , ISNEW() ), true,false) &amp;&amp; (Account.RecordType.DeveloperName == &apos;Advertiser&apos; || 
+Account.RecordType.DeveloperName == &apos;&apos; )</errorConditionFormula>
+    <errorMessage>This Account has been blocked. Please contact your Regional Finance Team for further information.</errorMessage>
+</ValidationRule>

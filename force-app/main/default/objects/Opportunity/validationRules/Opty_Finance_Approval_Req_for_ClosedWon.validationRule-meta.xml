@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opty_Finance_Approval_Req_for_ClosedWon</fullName>
+    <active>true</active>
+    <description>This rule will check if the opportunity is approved by Finance before it is marked as Closed Won.</description>
+    <errorConditionFormula>!(Account.Rev_Ops_Team__c == &apos;India_Microsoft Team&apos; || Account.Rev_Ops_Team__c == &apos;BING Pod&apos; || Account.Rev_Ops_Team__c == &apos;Bing Pod&apos;) &amp;&amp;
+TEXT(Account.Account_Region_del__c) != &apos;China&apos; &amp;&amp; $Profile.Name &lt;&gt; &quot;System Administrator&quot; &amp;&amp;
+AND(($RecordType.Name = &apos;Demand&apos;),ISBLANK(TEXT( Opportunity_Type__c)), IF( ISCHANGED( StageName ) ,
+IF((ISPICKVAL(StageName,&apos;Closed Won&apos;)), NOT(ISPICKVAL(PRIORVALUE( Approval_Status__c ),&apos;Approved&apos;)), false) , false))</errorConditionFormula>
+    <errorMessage>Opportunity cannot be marked as Closed Won until it is approved by Finance.</errorMessage>
+</ValidationRule>

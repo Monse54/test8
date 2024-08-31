@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Device__c</fullName>
+    <label>Devices</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Smart Phone</fullName>
+                <default>false</default>
+                <label>Smart Phone</label>
+            </value>
+            <value>
+                <fullName>Tablet</fullName>
+                <default>false</default>
+                <label>Tablet</label>
+            </value>
+            <value>
+                <fullName>Feature Phones</fullName>
+                <default>false</default>
+                <label>Feature Phones</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

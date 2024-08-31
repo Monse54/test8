@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pan_GST_India_Roo_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>$Profile.Name != &apos;System Administrator&apos; &amp;&amp; RecordType.Name == &apos;Demand&apos; &amp;&amp;
+OR(ISBLANK(Account.PAN_Card_Detail__c),ISBLANK (Account.GST_Number__c)) &amp;&amp;
+ Account.BillingCountry=&quot;India&quot; &amp;&amp; 
+ISPICKVAL( StageName,&quot;Negotiation&quot;)</errorConditionFormula>
+    <errorMessage>For Negotiation stage, PAN and GST are mandatory information at the account level.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inventory_Region_Pub__c</fullName>
+    <description>For Publisher Opportunity</description>
+    <label>Inventory Region</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Worldwide</fullName>
+                <default>true</default>
+                <label>Worldwide</label>
+            </value>
+            <value>
+                <fullName>Domestic</fullName>
+                <default>false</default>
+                <label>Domestic</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

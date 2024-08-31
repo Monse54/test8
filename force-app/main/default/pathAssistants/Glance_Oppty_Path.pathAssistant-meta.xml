@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>Glance Oppty Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Select this Stage when, agreement has been signed and returned to our sales team.&lt;/p&gt;</info>
+        <picklistValueName>Closed Won</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Reason__c</fieldNames>
+        <info>&lt;p&gt;Select this Stage when, Opportunity has been stalled indefinitely or is no longer viable.&lt;/p&gt;</info>
+        <picklistValueName>Dead/Lost</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Select this Stage when, prospect has a need and a budget and is actively looking for the available solutions in the market.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Qualified</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Select this Stage when, you have worked through and agreed on the details, our team waits for the signed IO from the client&lt;/p&gt;</info>
+        <picklistValueName>Waiting Final IO</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Glance</recordTypeName>
+</PathAssistant>

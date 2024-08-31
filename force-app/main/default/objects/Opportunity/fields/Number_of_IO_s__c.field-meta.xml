@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_IO_s__c</fullName>
+    <label>Number of IO&apos;s</label>
+    <summaryFilterItems>
+        <field>Insertion_Order__c.IO_Type__c</field>
+        <operation>equals</operation>
+        <value>Standard, Glance Standard</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Insertion_Order__c.Opportunity_Name__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

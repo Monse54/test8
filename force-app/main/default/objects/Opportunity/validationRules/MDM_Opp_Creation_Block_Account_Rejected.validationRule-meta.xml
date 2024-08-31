@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MDM_Opp_Creation_Block_Account_Rejected</fullName>
+    <active>false</active>
+    <description>Block creation of Opp for Account with MDM Status is rejected</description>
+    <errorConditionFormula>IsNew()&amp;&amp;
+(Account.RecordType.DeveloperName == &apos;Advertiser&apos; ||
+Brand_Name1__r.RecordType.DeveloperName == &apos;Advertiser&apos;) &amp;&amp;
+Text(Account.Account_Region_del__c) != &apos;Greater China&apos; &amp;&amp;
+(Text(Account.MDM_Approval_Status__c) == &apos;Rejected&apos; ||
+Text(Brand_Name1__r.MDM_Approval_Status__c) == &apos;Rejected&apos;) &amp;&amp;
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;</errorConditionFormula>
+    <errorMessage>Opportunity can not be created for Rejected MDM Status. Please do contact the Sales-Ops group.</errorMessage>
+</ValidationRule>

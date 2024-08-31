@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Directly_Become_Won</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISNEW(),
+ISPICKVAL(StageName, &quot;Closed Won&quot;),
+OR(RecordType.DeveloperName = &apos;Advertiser&apos;,
+RecordType.DeveloperName = &apos;Demand&apos;)
+)</errorConditionFormula>
+    <errorMessage>Opportunity cannot be created directly at the stage of Closed Won.</errorMessage>
+</ValidationRule>

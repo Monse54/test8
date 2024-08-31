@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Video_per_is_positive_and_less_than_100</fullName>
+    <active>false</active>
+    <errorConditionFormula>($RecordType.Name == &apos;Demand Sales&apos; || $RecordType.Name == &apos;	Etisalat Demand&apos;) &amp;&amp;
+Video__c &lt;  0.00 &amp;&amp;
+(Account.RecordType.DeveloperName == &apos;Advertiser&apos; || 
+ Account.RecordType.DeveloperName == &apos;&apos; )</errorConditionFormula>
+    <errorMessage>- Video% cannot be negative</errorMessage>
+</ValidationRule>

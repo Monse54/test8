@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_Blocked_Opportunity</fullName>
+    <active>true</active>
+    <description>The account related to this opportunity is blocked by the Finance team.</description>
+    <errorConditionFormula>AND(Account.Finance_Blocked__c=TRUE, $Profile.Name&lt;&gt;&apos;Finance&apos;, $Profile.Name&lt;&gt;&apos;System Administrator&apos;)</errorConditionFormula>
+    <errorMessage>This account is blocked by Finance team.</errorMessage>
+</ValidationRule>

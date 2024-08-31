@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Segment_Invalid</fullName>
+    <active>false</active>
+    <errorConditionFormula>$Profile.Name != &apos;System Administrator&apos; &amp;&amp; RecordType.DeveloperName=&apos;Advertiser&apos; &amp;&amp; NOT(
+INCLUDES( Account.Account_Segment__c,&apos;Brand&apos;) ||
+INCLUDES( Account.Account_Segment__c,&apos;Performance&apos;) ||
+INCLUDES( Account.Account_Segment__c,&apos;Programmatic - IX&apos;) ||
+INCLUDES( Account.Account_Segment__c,&apos;Programmatic - RTBD&apos;) ||
+INCLUDES( Account.Account_Segment__c,&apos;Programmatic - DCP&apos;)
+)</errorConditionFormula>
+    <errorMessage>Selected Account&apos;s Account Segment must be one of the &quot;Brand, Performance, Programmatic - IX, Programmatic - RTBD, Programmatic - DCP&quot;</errorMessage>
+</ValidationRule>

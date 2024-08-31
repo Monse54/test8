@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NET_PAYABLE_BY_CUSTOMER_USD_For_PDF__c</fullName>
+    <formula>IF(Net_Payable_By_Customer__c &lt;&gt; 0 ,Net_Payable_By_Customer__c /Convertion_Rate_From_IO__c ,0.00)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>NET PAYABLE BY CUSTOMER USD For PDF</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>

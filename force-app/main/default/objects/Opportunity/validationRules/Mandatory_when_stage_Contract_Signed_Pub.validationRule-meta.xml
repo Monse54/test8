@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_when_stage_Contract_Signed_Pub</fullName>
+    <active>false</active>
+    <description>Ensures that the Integration Method, Platform, Mediation Partner, Slot Sizes, Rich Media Capabilities and Geo Targeting Capabilities fields are mandatory when the Publisher Opportunities reaches stage  Negotiation</description>
+    <errorConditionFormula>ISPICKVAL(Type,&apos;Publisher&apos;) &amp;&amp;( ISPICKVAL(StageName,&apos;Contract Signed&apos;) || ISPICKVAL(StageName,&apos;Integration&apos;) || ISPICKVAL(StageName,&apos;Launched&apos;))   &amp;&amp; ( ISBLANK( Integration_Method__c)  || ISBLANK(Platform__c)  ||  ISBLANK( Mediation_Partner__c) ||  ISBLANK(Slot_Sizes__c) || ISBLANK(Rich_Media_Capabilities__c) || ISBLANK(Geo_Targeting_Capability__c))</errorConditionFormula>
+    <errorDisplayField>X3D_Ads__c</errorDisplayField>
+    <errorMessage>All Integration Information fields are Mandatory when Opportunity reaches Contract Signed stage.</errorMessage>
+</ValidationRule>

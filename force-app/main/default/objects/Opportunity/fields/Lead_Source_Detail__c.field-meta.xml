@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_Detail__c</fullName>
+    <label>Lead Source Detail</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>LeadSource</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AdRoll</fullName>
+                <default>false</default>
+                <label>AdRoll</label>
+            </value>
+            <value>
+                <fullName>AdWords</fullName>
+                <default>false</default>
+                <label>AdWords</label>
+            </value>
+            <value>
+                <fullName>BuySellAds</fullName>
+                <default>false</default>
+                <label>BuySellAds</label>
+            </value>
+            <value>
+                <fullName>MMWA</fullName>
+                <default>false</default>
+                <label>MMWA</label>
+            </value>
+            <value>
+                <fullName>FacebookPPC</fullName>
+                <default>false</default>
+                <label>FacebookPPC</label>
+            </value>
+            <value>
+                <fullName>LinkedInPPC</fullName>
+                <default>false</default>
+                <label>LinkedInPPC</label>
+            </value>
+            <value>
+                <fullName>Stack Overflow</fullName>
+                <default>false</default>
+                <label>Stack Overflow</label>
+            </value>
+            <value>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+                <label>Twitter</label>
+            </value>
+            <value>
+                <fullName>AdTech 2014</fullName>
+                <default>false</default>
+                <label>AdTech 2014</label>
+            </value>
+            <value>
+                <fullName>App World 2014</fullName>
+                <default>false</default>
+                <label>App World 2014</label>
+            </value>
+            <value>
+                <fullName>Casual Connect 2015</fullName>
+                <default>false</default>
+                <label>Casual Connect 2015</label>
+            </value>
+            <value>
+                <fullName>Casual Connect 2016</fullName>
+                <default>false</default>
+                <label>Casual Connect 2016</label>
+            </value>
+            <value>
+                <fullName>CES/Appnation 2016</fullName>
+                <default>false</default>
+                <label>CES/Appnation 2016</label>
+            </value>
+            <value>
+                <fullName>DMEXCO 2015</fullName>
+                <default>false</default>
+                <label>DMEXCO 2015</label>
+            </value>
+            <value>
+                <fullName>E3 2016</fullName>
+                <default>false</default>
+                <label>E3 2016</label>
+            </value>
+            <value>
+                <fullName>GDC 2014</fullName>
+                <default>false</default>
+                <label>GDC 2014</label>
+            </value>
+            <value>
+                <fullName>GMIC 2014</fullName>
+                <default>false</default>
+                <label>GMIC 2014</label>
+            </value>
+            <value>
+                <fullName>Nordic Games 2017</fullName>
+                <default>false</default>
+                <label>Nordic Games 2017</label>
+            </value>
+            <value>
+                <fullName>PGC 2016</fullName>
+                <default>false</default>
+                <label>PGC 2016</label>
+            </value>
+            <value>
+                <fullName>Postback 2016</fullName>
+                <default>false</default>
+                <label>Postback 2016</label>
+            </value>
+            <value>
+                <fullName>LinkedIn</fullName>
+                <default>false</default>
+                <label>LinkedIn</label>
+            </value>
+            <value>
+                <fullName>MixRank</fullName>
+                <default>false</default>
+                <label>MixRank</label>
+            </value>
+            <value>
+                <fullName>Forum</fullName>
+                <default>false</default>
+                <label>Forum</label>
+            </value>
+            <value>
+                <fullName>Partner Referral</fullName>
+                <default>false</default>
+                <label>Partner Referral</label>
+            </value>
+            <value>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+                <label>External Referral</label>
+            </value>
+            <value>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+                <label>Employee Referral</label>
+            </value>
+            <value>
+                <fullName>Appindex</fullName>
+                <default>false</default>
+                <label>Appindex</label>
+            </value>
+            <value>
+                <fullName>mobyaffiliates</fullName>
+                <default>false</default>
+                <label>mobyaffiliates</label>
+            </value>
+            <value>
+                <fullName>PGC 2017</fullName>
+                <default>false</default>
+                <label>PGC 2017</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PI_required_Expansion_to_New_Product</fullName>
+    <active>true</active>
+    <description>Product of Interest is required for Opportunity type as &apos;Expansion to New Product&apos;</description>
+    <errorConditionFormula>Text(Opportunity_Type__c) == &apos;Expansion to New Product&apos; &amp;&amp; ISBLANK(Product_Interest__c) &amp;&amp;
+($RecordType.Name == &apos;Demand&apos;)</errorConditionFormula>
+    <errorMessage>Please update the &quot;Product Interest&quot; field to reflect which new product has been sold to this particular customer</errorMessage>
+</ValidationRule>

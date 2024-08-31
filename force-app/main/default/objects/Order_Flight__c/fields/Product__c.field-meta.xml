@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <label>Product</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Banner</fullName>
+                <default>false</default>
+                <label>Banner</label>
+            </value>
+            <value>
+                <fullName>Native</fullName>
+                <default>false</default>
+                <label>Native</label>
+            </value>
+            <value>
+                <fullName>Interstitials</fullName>
+                <default>false</default>
+                <label>Interstitials</label>
+            </value>
+            <value>
+                <fullName>Video</fullName>
+                <default>false</default>
+                <label>Video</label>
+            </value>
+            <value>
+                <fullName>CTV Placement</fullName>
+                <default>false</default>
+                <label>CTV Placement</label>
+            </value>
+            <value>
+                <fullName>Widget</fullName>
+                <default>false</default>
+                <label>Widget</label>
+            </value>
+            <value>
+                <fullName>Push Notification</fullName>
+                <default>false</default>
+                <label>Push Notification</label>
+            </value>
+            <value>
+                <fullName>1Weather Rewards</fullName>
+                <default>false</default>
+                <label>1Weather Rewards</label>
+            </value>
+            <value>
+                <fullName>Expandables</fullName>
+                <default>false</default>
+                <label>Expandables</label>
+            </value>
+            <value>
+                <fullName>InMobi Rich Media* (Expandable)</fullName>
+                <default>false</default>
+                <label>InMobi Rich Media* (Expandable)</label>
+            </value>
+            <value>
+                <fullName>Etisalat.ae</fullName>
+                <default>false</default>
+                <label>Etisalat.ae</label>
+            </value>
+            <value>
+                <fullName>Connect.ae</fullName>
+                <default>false</default>
+                <label>Connect.ae</label>
+            </value>
+            <value>
+                <fullName>Yellow Pages</fullName>
+                <default>false</default>
+                <label>Yellow Pages</label>
+            </value>
+            <value>
+                <fullName>Smiles (App)</fullName>
+                <default>false</default>
+                <label>Smiles (App)</label>
+            </value>
+            <value>
+                <fullName>DOOH</fullName>
+                <default>false</default>
+                <label>DOOH</label>
+            </value>
+            <value>
+                <fullName>IPTV Box</fullName>
+                <default>false</default>
+                <label>IPTV Box</label>
+            </value>
+            <value>
+                <fullName>IPTV Homepage</fullName>
+                <default>false</default>
+                <label>IPTV Homepage</label>
+            </value>
+            <value>
+                <fullName>iPTV Live TV</fullName>
+                <default>false</default>
+                <label>iPTV Live TV</label>
+            </value>
+            <value>
+                <fullName>Roadblock</fullName>
+                <default>false</default>
+                <label>Roadblock</label>
+            </value>
+            <value>
+                <fullName>Impact</fullName>
+                <default>false</default>
+                <label>Impact</label>
+            </value>
+            <value>
+                <fullName>Sustenance</fullName>
+                <default>false</default>
+                <label>Sustenance</label>
+            </value>
+            <value>
+                <fullName>Performance</fullName>
+                <default>false</default>
+                <label>Performance</label>
+            </value>
+            <value>
+                <fullName>Game Center</fullName>
+                <default>false</default>
+                <label>Game Center</label>
+            </value>
+            <value>
+                <fullName>Content Series</fullName>
+                <default>false</default>
+                <label>Content Series</label>
+            </value>
+            <value>
+                <fullName>Live</fullName>
+                <default>false</default>
+                <label>Live</label>
+            </value>
+            <value>
+                <fullName>Brand Lift Study</fullName>
+                <default>false</default>
+                <label>Brand Lift Study</label>
+            </value>
+            <value>
+                <fullName>Audience Profiling Study</fullName>
+                <default>false</default>
+                <label>Audience Profiling Study</label>
+            </value>
+            <value>
+                <fullName>Bonus Placement</fullName>
+                <default>false</default>
+                <label>Bonus Placement</label>
+            </value>
+            <value>
+                <fullName>All inventory</fullName>
+                <default>false</default>
+                <label>All inventory</label>
+            </value>
+            <value>
+                <fullName>Glance Brand</fullName>
+                <default>false</default>
+                <label>Glance Brand</label>
+            </value>
+            <value>
+                <fullName>Glance OCI</fullName>
+                <default>false</default>
+                <label>Glance OCI</label>
+            </value>
+            <value>
+                <fullName>Display</fullName>
+                <default>false</default>
+                <label>Display</label>
+            </value>
+            <value>
+                <fullName>Glance Pulse</fullName>
+                <default>false</default>
+                <label>Glance Pulse</label>
+            </value>
+            <value>
+                <fullName>PRISM</fullName>
+                <default>false</default>
+                <label>PRISM</label>
+            </value>
+            <value>
+                <fullName>Free Trial</fullName>
+                <default>false</default>
+                <label>Free Trial</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

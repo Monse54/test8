@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Platform_Used__c</fullName>
+    <label>Platform Used</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Adobe Air</fullName>
+                <default>false</default>
+                <label>Adobe Air</label>
+            </value>
+            <value>
+                <fullName>Basic4Android</fullName>
+                <default>false</default>
+                <label>Basic4Android</label>
+            </value>
+            <value>
+                <fullName>Corona Labs</fullName>
+                <default>false</default>
+                <label>Corona Labs</label>
+            </value>
+            <value>
+                <fullName>Embarcadero</fullName>
+                <default>false</default>
+                <label>Embarcadero</label>
+            </value>
+            <value>
+                <fullName>PhoneGap</fullName>
+                <default>false</default>
+                <label>PhoneGap</label>
+            </value>
+            <value>
+                <fullName>Tapjoy</fullName>
+                <default>false</default>
+                <label>Tapjoy</label>
+            </value>
+            <value>
+                <fullName>Telerik</fullName>
+                <default>false</default>
+                <label>Telerik</label>
+            </value>
+            <value>
+                <fullName>Unity</fullName>
+                <default>false</default>
+                <label>Unity</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

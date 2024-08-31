@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Accepted_Quote_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(StageName, &quot;Legal Review&quot;) , $Profile.Name &lt;&gt; &quot;System Administrator&quot;, Count_Opportunity_Products__c &lt; 1, Is_Exchange_Opty__c = false, NOT(OR(ISPICKVAL( Opportunity_Type__c , &quot;APMP&quot;),ISPICKVAL( Opportunity_Type__c , &quot;DPMP&quot;))), 
+RecordType.DeveloperName = &apos;Demand&apos;)
+/*
+OR(
+RecordType.DeveloperName = &apos;Demand&apos;,
+RecordType.DeveloperName = &apos;Advertiser&apos;)
+)*/</errorConditionFormula>
+    <errorMessage>There should be atleast one Opportunity Product to change the status of Non Exchange opportunity to Legal Review.</errorMessage>
+</ValidationRule>

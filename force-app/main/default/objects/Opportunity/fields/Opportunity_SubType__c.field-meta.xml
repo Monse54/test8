@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_SubType__c</fullName>
+    <label>Opportunity SubType</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Meson Prime</fullName>
+                <default>false</default>
+                <label>Meson Prime</label>
+            </value>
+            <value>
+                <fullName>Meson Wrap</fullName>
+                <default>false</default>
+                <label>Meson Wrap</label>
+            </value>
+            <value>
+                <fullName>Commerce</fullName>
+                <default>false</default>
+                <label>Commerce</label>
+            </value>
+            <value>
+                <fullName>Gaming - Supply</fullName>
+                <default>false</default>
+                <label>Gaming - Supply</label>
+            </value>
+            <value>
+                <fullName>Non Gaming - Supply</fullName>
+                <default>false</default>
+                <label>Non Gaming - Supply</label>
+            </value>
+            <value>
+                <fullName>Demand</fullName>
+                <default>false</default>
+                <label>Demand</label>
+            </value>
+            <value>
+                <fullName>Glance</fullName>
+                <default>false</default>
+                <label>Glance</label>
+            </value>
+            <value>
+                <fullName>PMP</fullName>
+                <default>false</default>
+                <label>PMP</label>
+            </value>
+            <value>
+                <fullName>Etisalat</fullName>
+                <default>false</default>
+                <label>Etisalat</label>
+            </value>
+            <value>
+                <fullName>Appsumer</fullName>
+                <default>false</default>
+                <label>Appsumer</label>
+            </value>
+            <value>
+                <fullName>Pulse</fullName>
+                <default>false</default>
+                <label>Pulse</label>
+            </value>
+            <value>
+                <fullName>Search</fullName>
+                <default>false</default>
+                <label>Search</label>
+            </value>
+            <value>
+                <fullName>China</fullName>
+                <default>false</default>
+                <label>China</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

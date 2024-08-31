@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Linked_Client_Account_Segment__c</fullName>
+    <externalId>false</externalId>
+    <formula>SUBSTITUTE(TRIM(
+IF(INCLUDES(Brand_Name1__r.Account_Segment__c,&quot;Brand&quot;),&quot;Brand&quot;,NULL)&amp;
+IF(INCLUDES(Brand_Name1__r.Account_Segment__c,&quot;Performance&quot;),&quot;Performance &quot;,NULL)&amp;
+IF(INCLUDES(Brand_Name1__r.Account_Segment__c,&quot;Programmatic&quot;),&quot;Programmatic&quot;,NULL)&amp;
+IF(INCLUDES(Brand_Name1__r.Account_Segment__c,&quot;Primary Mediation&quot;),&quot;Primary Mediation&quot;,NULL)&amp;
+IF(INCLUDES(Brand_Name1__r.Account_Segment__c,&quot;Mediation&quot;),&quot;Mediation &quot;,NULL)&amp;
+IF(INCLUDES(Brand_Name1__r.Account_Segment__c,&quot;Enterprise&quot;),&quot;Enterprise &quot;,NULL)&amp;
+IF(INCLUDES(Brand_Name1__r.Account_Segment__c,&quot;Media&quot;),&quot;Media&quot;,NULL)
+),&quot; &quot;,&quot;; &quot;)</formula>
+    <label>Linked Client : Account Segment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

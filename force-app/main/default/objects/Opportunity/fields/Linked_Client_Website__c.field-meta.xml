@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Linked_Client_Website__c</fullName>
+    <description>Field to get the Linked client website on opportunity. 
+
+EISF-2196</description>
+    <externalId>false</externalId>
+    <formula>Brand_Name1__r.Website</formula>
+    <label>Linked Client Website</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

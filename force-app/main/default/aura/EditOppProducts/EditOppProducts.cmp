@@ -1,0 +1,403 @@
+<aura:component controller="EditOppProductsController" implements="force:hasRecordId,lightning:actionOverride,lightning:hasPageReference,force:lightningQuickAction">
+	<aura:dependency resource="markup://force:navigateToURL" type="EVENT"/>
+	<aura:attribute name="lineItemList" type="list"/>
+	<aura:attribute name="recordTypeName" type="string" />
+	<aura:attribute name="productList" type="list" default = ""/>
+	<aura:attribute name="recordId" type="string" default="" />	
+	<aura:attribute name="spinner" type="boolean" default="false"/>
+	<aura:attribute name="pTypes" type="list"/>
+	<aura:attribute name="pModels" type="list"/>
+	<aura:attribute name="pCountrys" type="list"/>
+	<aura:attribute name="opp" type="Opportunity"/>
+	<aura:attribute name="todayDate" type="date"/>
+	<aura:attribute name="endDate" type="date"/>
+	<aura:attribute name="showConfirmDialog" type="boolean" default="false"/>
+	<aura:attribute name="opId" type="string"/>
+	<aura:attribute name="updateNotes" type="boolean" default="false"/>
+    <aura:attribute name="isAdmin" type="boolean" default="false"/>
+    <aura:attribute name="showConfirmDialogHigherSP" type="boolean" default="false"/>
+	<aura:attribute name="indexes" type="list"/>
+	
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+
+	<aura:if isTrue="{!v.showConfirmDialog}">
+		<div role="dialog" class="slds-modal slds-fade-in-open ">
+			<div class="slds-modal__container">
+				<header class="slds-modal__header">
+					<h1 class="slds-text-heading--medium">Confirmation for Finance Approval</h1>
+				</header>
+				<!--Modal Box Header End-->
+				
+				<!--Modal Box Content Start-->
+				<div class="slds-modal__content slds-p-around--medium">
+					<center><b>Budget is more than original budget, so needs finance team approval. Are you sure, you want to send for finance approval?</b></center>
+				</div>
+				<!--Modal Box Content End-->
+				
+				<!--Modal Box Button Start-->
+				<footer class="slds-modal__footer">
+					<lightning:button name='No' label='No' onclick='{!c.handleConfirmDialogNo}'/>
+					<lightning:button variant="brand" name='Yes' label='Yes' onclick='{!c.handleConfirmDialogYes}'/>
+				</footer>
+				<!--Modal Box Button End-->
+			</div>
+		</div>
+		<div class="slds-backdrop slds-backdrop--open"></div>			
+	</aura:if>
+
+    <aura:if isTrue="{!v.showConfirmDialogHigherSP}">
+        <div role="dialog" class="slds-modal slds-fade-in-open ">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h1 class="slds-text-heading--medium">Confirmation for Sales Price</h1>
+                </header>
+                <!--Modal Box Header End-->
+                
+                <!--Modal Box Content Start-->
+                <div class="slds-modal__content slds-p-around--medium">
+                    <center><b>Unit sale price entered is more than 10 times the list price for line item row(s) highlighted in yellow. Are you sure you want to continue?</b></center>
+                </div>
+                <!--Modal Box Content End-->
+                
+                <!--Modal Box Button Start-->
+                <footer class="slds-modal__footer">
+                    <lightning:button name='No' label='No' onclick='{!c.handleConfirmDialogHigherSPNo}'/>
+                    <lightning:button variant="brand" name='Yes' label='Yes' onclick='{!c.handleConfirmDialogHigherSPYes}'/>
+                </footer>
+                <!--Modal Box Button End-->
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>            
+    </aura:if>
+
+	<aura:if isTrue="{!v.updateNotes}">
+		<div role="dialog" class="slds-modal slds-fade-in-open ">
+			<div class="slds-modal__container">
+				<header class="slds-modal__header">
+					<h1 class="slds-text-heading--medium">Update Notes</h1>
+				</header>
+				<!--Modal Box Header End-->
+				
+				<!--Modal Box Content Start-->
+				<div class="slds-modal__content slds-p-around--medium">
+					<c:EditOppProductNotes recordId="{!v.opId}"
+										   updateNotes="{!v.updateNotes}"/>
+				</div>
+				<!--Modal Box Content End-->
+				
+				<!--Modal Box Button Start-->
+				<footer class="slds-modal__footer">
+					<lightning:button class="slds-float_right" name='cancel' label='Cancel' onclick='{!c.handleConfirmCancel}'/>
+				</footer>
+				<!--Modal Box Button End-->
+			</div>
+		</div>
+		<div class="slds-backdrop slds-backdrop--open"></div>			
+	</aura:if>
+	
+	<div>
+		<table class="slds-table slds-table_cell-buffer slds-table_bordered" style="width:100%;">
+			<thead>
+				<tr class="slds-line-height_reset">
+					<!--<th scope="col"><div class="slds-truncate" title="IMCBU">IMC BU</div></th> -->
+					<th scope="col"><div class="slds-truncate" title="ProductType">Product Type</div></th>
+					<th scope="col"><div class="slds-truncate" title="ProductName">Product Sub-Type</div></th>
+					<!--<th scope="col"><div class="slds-truncate" title="Geo">Geo (ROO)</div></th>
+					<th scope="col"><div class="slds-truncate" title="Geo">Target Geo (ROB)</div></th>
+					<th scope="col"><div class="slds-truncate" title="ChannelType">Channel Type</div></th> -->
+					<th scope="col"><div class="slds-truncate" title="PricingModel">Pricing Model</div></th>
+					<!-- <th scope="col"><div class="slds-truncate" title="PlacementName">Placement Name</div></th> -->
+					<th scope="col"><div class="slds-truncate" title="Budget">Budget</div></th>
+					<th scope="col"><div class="slds-truncate" title="Quantity">Quantity</div></th>
+					<th scope="col"><div class="slds-truncate" title="ListPrice">Unit List Price</div></th>
+					<th scope="col"><div class="slds-truncate" title="SalesPrice">Unit Sales Price</div></th>
+					<th scope="col"><div class="slds-truncate" title="Start Date">Start Date</div></th>
+					<th scope="col"><div class="slds-truncate" title="End Date">End Date</div></th>
+				</tr>
+			</thead>
+			<tbody>
+				<aura:iteration items="{!v.lineItemList}" var="item" indexVar="index">
+					<tr class="slds-hint-parent" onmouseover="{!c.getPrice}" data-value="{!index}">
+						<!--<td>
+							<aura:if isTrue="{!OR(item.Id != null, v.opp.Opportunity_SubType__c!='Demand')}">
+								<lightning:select aura:id="validateFields" disabled="true" label="Select IMC BU" value="{!item.IMC_BU__c}" required="true" name="{!index}">
+									<option text="IMC AdTech Sales" value="IMC AdTech Sales"/>
+									<option value="Etisalat">Etisalat</option>
+									<option value="BING">BING</option>
+									<option value="Telco">Telco</option>
+									<option value="Glance">Glance</option>
+									<option value="IMC Pulse">IMC Pulse</option>
+								</lightning:select>
+							</aura:if>
+							<aura:if isTrue="{!AND(item.Id == null, v.opp.Opportunity_SubType__c=='Demand')}">
+								<lightning:select aura:id="validateFields" disabled="false" label="Select IMC BU" value="{!item.IMC_BU__c}" required="true" name="{!index}">
+									<option text="IMC AdTech Sales" value="IMC AdTech Sales"/>
+									<option value="IMC Pulse">IMC Pulse</option>
+								</lightning:select>
+							</aura:if>
+						</td> -->
+						<td>
+							<aura:if isTrue="{!item.Id != null}">
+								<lightning:input type="text" 
+												 disabled="{!if(item.Id != null, true,false)}" 
+												 required="true" 
+												 value="{!item.ProductType__c}" 
+												 label="Select Product Type" />
+							</aura:if>
+							<aura:if isTrue="{!AND(item.Id == null, v.opp.Opportunity_Segment__c!='Performance')}">
+								<c:CustomLookup objectAPIName="Product_Price_List__c" 
+												label="Select Product Type" 
+												showAddNew="false"
+												returnFields="['Product_Type__c']" 
+												queryFields="['Product_Type__c']"
+												selectedName="{!item.ProductType__c}" 
+												filter="{!'CurrencyIsoCode=\'' + v.opp.CurrencyIsoCode + '\' AND Region__c=\'' + v.opp.Opportunity_Region__c + '\' AND Product_Type__c!=\'Performance\''}" 
+												unique="true"
+												maxResults="1000" 
+												reset="true" />
+							</aura:if>
+							<aura:if isTrue="{!AND(item.Id == null, v.opp.Opportunity_Segment__c=='Performance')}">
+								<c:CustomLookup objectAPIName="Product_Price_List__c" 
+												label="Select Product Type" 
+												showAddNew="false"
+												returnFields="['Product_Type__c']" 
+												queryFields="['Product_Type__c']"
+												selectedName="{!item.ProductType__c}" 
+												filter="{!'CurrencyIsoCode=\'' + v.opp.CurrencyIsoCode + '\' AND Region__c=\'' + v.opp.Opportunity_Region__c + '\''}" 
+												unique="true"
+												maxResults="1000" 
+												reset="true" />
+							</aura:if>
+							<!--lightning:select aura:id="validateFields" disabled="{!if(item.Id != null, true, false)}" label="Select Product Type" value="{!item.ProductType__c}" required="true" onchange="{!c.getPrice}" name="{!index}">
+								<option text="choose one..." value=""/>
+								<aura:iteration items="{!v.pTypes}" var="option">
+									<option text="{!option.label}" value="{!option.value}"/>
+								</aura:iteration>
+							</lightning:select-->
+						</td>
+						<td>
+							<aura:if isTrue="{!item.Id != null}">
+								<lightning:input type="text" 
+												 disabled="{!if(item.Id != null, true,false)}" 
+												 required="true" 
+												 value="{!item.Product2.Name}" 
+												 label="Select Product Sub Type" />
+							</aura:if>
+							<aura:if isTrue="{!item.Id == null}">
+								<c:CustomLookup objectAPIName="Product_Price_List__c" 
+												label="Select Product Sub Type" 
+												showAddNew="false"
+												returnFields="['Product_Sub_Type__r.Name','Product_Sub_Type__c']" 
+												queryFields="['Product_Sub_Type__r.Name']"
+												selectedId="{!item.selectedId}"  
+												selectedFieldId2="{!item.Product2Id}" 
+												filter="{!'CurrencyIsoCode=\'' + v.opp.CurrencyIsoCode + '\' AND Region__c=\'' + v.opp.Opportunity_Region__c + '\'  AND ' + 'Product_Type__c=\'' + item.ProductType__c +'\''}" 
+												unique="true"
+												disabled="{!item.ProductType__c == null}" 
+												reset="true" 
+												maxResults="1000" />
+							</aura:if>
+							<!--<lightning:select aura:id="validateFields" disabled="{!if(item.Id != null, true, false)}" label="Select Product Sub-Type" value="{!item.Product2Id}" required="true" onchange="{!c.getPrice}" name="{!index}">
+								<option text="choose one..." value=""/>
+								<aura:iteration items="{!v.productList}" var="option">
+									<option text="{!option.label}" value="{!option.value}"/>
+								</aura:iteration>
+							</lightning:select>-->
+						</td> 
+						<!--<td>
+							<aura:if isTrue="{!item.Id != null}">
+								<lightning:input type="text" 
+												 disabled="{!if(item.Id != null, true,false)}" 
+												 required="true" 
+												 value="{!item.Geo__c}" 
+												 label="Select Geo (ROO)" />
+							</aura:if>
+							<aura:if isTrue="{!item.Id == null}">
+								<c:CustomLookup objectAPIName="Product_Price_List__c" 
+												label="Select Geo (ROO)" 
+												showAddNew="false"
+												returnFields="['Geo__c']" 
+												queryFields="['Geo__c']"
+												selectedName="{!item.Geo__c}" 
+												filter="{!'CurrencyIsoCode=\'' + v.opp.CurrencyIsoCode + '\' AND Region__c=\'' + v.opp.Opportunity_Region__c + '\' AND ROO__c=\'' + v.opp.Opportunity_Sub_Region__c + '\' AND IMC_BU__c=\'' + item.IMC_BU__c + '\' AND ' + 'Product_Type__c=\'' + item.ProductType__c +'\''}" 
+												unique="true"
+												maxResults="1000" 
+												disabled="{!item.Product2Id == null}" 
+												reset="true" />
+							</aura:if>
+							<lightning:input type="text" 
+											 disabled="true" 
+											 required="true" 
+											 value="{!item.Country__c}" 
+											 label="Select Country" />
+							<aura:if isTrue="{!item.Id != null}">
+								<lightning:input type="text" 
+												 disabled="{!if(item.Id != null, true,false)}" 
+												 required="true" 
+												 value="{!item.Country__c}" 
+												 label="Select Country" />
+							</aura:if>
+							<aura:if isTrue="{!item.Id == null}">
+								<c:CustomLookup objectAPIName="RegionMappingByBillingCountry__c" 
+												label="Select Country" 
+												showAddNew="false"
+												returnFields="['Billing_Country__c']" 
+												queryFields="['Billing_Country__c']"
+												selectedName="{!item.Country__c}"
+												filter="{!'Region__c=\'' + v.opp.Opportunity_Region__c + '\' AND Region_of_Origin__c=\'' + v.opp.Opportunity_Sub_Region__c + '\''}" 
+												reset="true" 
+												maxResults="1000" />
+							</aura:if>
+							<lightning:select aura:id="validateFields" disabled="{!if(item.Id != null, true, false)}" label="Select Country" value="{!item.Country__c}" required="false" onchange="{!c.getPrice}" name="{!index}">
+								<option text="N/A" value=""/>
+								<aura:iteration items="{!v.pCountrys}" var="option">
+									<option text="{!option.label}" value="{!option.value}"/>
+								</aura:iteration>
+							</lightning:select>
+						</td>-->
+						<!--<td><lightning:input type="text" required="false" value="{!item.Target_Geo__c}" label="Target Geo (ROB)" name="{!index}"/></td>
+						<td>
+							<aura:if isTrue="{!item.Id != null}">
+								<lightning:input type="text" 
+												 disabled="{!if(item.Id != null, true,false)}" 
+												 required="true" 
+												 value="{!item.Channel_Type__c}" 
+												 label="Select Channel Type" />
+							</aura:if>
+							<aura:if isTrue="{!item.Id == null}">
+								<c:CustomLookup objectAPIName="Product_Price_List__c" 
+												label="Select Channel Type" 
+												showAddNew="false"
+												returnFields="['Channel_Type__c']" 
+												queryFields="['Channel_Type__c']"
+												selectedName="{!item.Channel_Type__c}" 
+												filter="{!'CurrencyIsoCode=\'' + v.opp.CurrencyIsoCode + '\' AND Region__c=\'' + v.opp.Opportunity_Region__c + '\' AND ROO__c=\'' + v.opp.Opportunity_Sub_Region__c + '\' AND IMC_BU__c=\'' + item.IMC_BU__c + '\' AND ' + 'Product_Type__c=\'' + item.ProductType__c +'\' AND ' + 'Product_Sub_Type__c=\'' + item.Product2Id + '\' AND Geo__c=\'' + item.Geo__c +'\''}" 
+												unique="true"
+												disabled="{!OR(item.IMC_BU__c == null,item.ProductType__c == null,item.Product2Id == null,item.Geo__c == null,item.ProductType__c == null)}" 
+												reset="true" 
+												maxResults="1000" />
+							</aura:if>
+							<lightning:select aura:id="validateFields" disabled="{!if(item.Id != null, true, false)}" label="Select Channel Type" value="{!item.Channel_Type__c}" required="true" onchange="{!c.getPrice}" name="{!index}">
+								<option text="choose one..." value=""/>
+								<option value="DSP">DSP</option>
+								<option value="IAP">IAP</option>
+								<option value="Blink Folder">Blink Folder</option>
+								<option value="Blend_Weather">Blend_Weather</option>
+								<option value="Media Buy">Media Buy</option>
+								<option value="OADX">OADX</option>
+								<option value="Influencer">Influencer</option>
+								<option value="Appsumer">Appsumer</option>
+								<option value="Meson">Meson</option>
+								<option value="Non-programmatic">Non-programmatic</option>
+								<option value="Programmatic">Programmatic</option>
+								<option value="Programmatic / Non-programmatic">Programmatic / Non-programmatic</option>
+							</lightning:select>
+						</td> -->
+						<td>
+							<aura:if isTrue="{!item.Id != null}">
+								<lightning:input type="text" 
+												 disabled="{!if(item.Id != null, true,false)}" 
+												 required="true" 
+												 value="{!item.Pricing_Model__c}" 
+												 label="Select Pricing Model" />
+							</aura:if>
+							<aura:if isTrue="{!item.Id == null}">
+								<c:CustomLookup objectAPIName="Product_Price_List__c" 
+												label="Select Pricing Model" 
+												showAddNew="false"
+												returnFields="['Pricing_Model__c']" 
+												queryFields="['Pricing_Model__c']"
+												selectedName="{!item.Pricing_Model__c}" 
+												filter="{!'CurrencyIsoCode=\'' + v.opp.CurrencyIsoCode + '\' AND Region__c=\'' + v.opp.Opportunity_Region__c + '\' AND ' + 'Product_Type__c=\'' + item.ProductType__c + '\''}" 
+												unique="true"
+												disabled="{!OR(item.IMC_BU__c == null,item.ProductType__c == null,item.Product2Id == null,item.Geo__c == null,item.ProductType__c == null,item.Channel_Type__c == null)}" 
+												reset="true" 
+												maxResults="1000" />
+							</aura:if>
+							<!--lightning:select aura:id="validateFields" disabled="{!if(item.Id != null, true, false)}" label="Select Pricing Model" value="{!item.Pricing_Model__c}" required="true" onchange="{!c.getPrice}" name="{!index}">
+								<option text="choose one..." value=""/>
+								<aura:iteration items="{!v.pModels}" var="option">
+									<option text="{!option.label}" value="{!option.value}"/>
+								</aura:iteration>
+							</lightning:select-->
+						</td>
+						<!--td>
+							<lightning:select aura:id="validateFields" disabled="{!if(item.Id != null, true, false)}" label="Select Multiple Channel" value="{!item.Multiple_Channel__c}" required="false" onchange="{!c.getPrice}" name="{!index}">
+								<option text="No" value="No"/>
+								<option value="Yes">Yes</option>
+							</lightning:select>
+						</td-->
+						<!--<td><lightning:input type="text" required="true" value="{!item.Placement_Name__c}" label="Placement Name" name="{!index}"/></td>-->
+						<td><lightning:input type="number" aura:id="validateFields" step="0.01" required="true" value="{!item.Budget__c}" label="Budget" onblur="{!c.updateQuantity}" name="{!index}"/></td>
+						<!--td><lightning:input type="number" aura:id="validateFields" required="{!if(item.Impression__c == null, true,false)}" value="{!item.Budget__c}" label="Budget" /></td-->
+						<td><lightning:input type="number" aura:id="validateFields" step="1" required="false" value="{!item.Impression__c}" label="Quantity" disabled="true" name="{!index}"/></td>
+						<!--td><lightning:input type="number" aura:id="validateFields" required="{!if(item.Budget__c == null, true,false)}" value="{!item.Impression__c}" label="Quantity (Impression)" /></td-->
+						<td><lightning:input aura:id="validateFields" type="number" step="0.01" required="true" value="{!item.List_Price__c}" label="Unit List Price" 
+											 disabled="true" name="{!index}"/></td>
+						<td><lightning:input aura:id="salesPrice" type="number" step="0.0001" required="{!if(item.Pricing_Model__c!='dCPM', true, false)}" 
+											 value="{!item.Sales_Price__c}" label="Unit Sales Price" name="{!index}" onchange="{!c.updateQuantity}" 
+											 disabled="{!AND(item.Id != null, v.opp.StageName=='Closed Won')}"/></td>
+						<td><lightning:input aura:id="validateFields" type="date" required="true" value="{!item.Start_Date__c}" label="Start Date" 
+											 disabled="{!AND(item.Id != null, v.opp.StageName=='Closed Won')}"/></td>
+						<td><lightning:input aura:id="validateFields" type="date" value="{!item.End_Date__c}" label="End Date" required="true" onchange="{!c.validateEndDate}" name="{!index}"
+											 disabled="false"/></td>
+						<aura:if isTrue="{!AND(item.Id != null, v.isAdmin)}">
+							<lightning:buttonIcon iconName="utility:edit" 
+												  size="large" 
+												  variant="bare" 
+												  onclick="{!c.handleEdit}" 
+												  alternativeText="Edit" 
+												  class="slds-button_icon-inverse" 
+												  value="{!index}"/>
+						</aura:if>
+						<aura:if isTrue="{!item.Notes__c != null}">
+							<lightning:buttonIcon iconName="utility:note" 
+												  size="large" 
+												  variant="brand" 
+												  onclick="{!c.openNotes}" 
+												  alternativeText="Notes" 
+												  class="slds-button_icon-inverse" 
+												  value="{!index}" 
+												  disabled="{!item.Id == null}" 
+												  name="{!index}"/>
+						</aura:if>
+						<aura:if isTrue="{!item.Notes__c == null}">
+						<lightning:buttonIcon iconName="utility:note" 
+											  size="large" 
+											  variant="bare" 
+											  onclick="{!c.openNotes}" 
+											  alternativeText="Notes" 
+											  class="slds-button_icon-inverse" 
+											  value="{!index}" 
+											  disabled="{!item.Id == null}" 
+											  name="{!index}"/>
+						</aura:if>
+						<lightning:buttonIcon iconName="utility:close" 
+											  size="large" 
+											  variant="bare" 
+											  onclick="{!c.handleRemoveItem}" 
+											  alternativeText="Delete" 
+											  class="slds-button_icon-inverse" 
+											  value="{!index}" 
+											  disabled="{!AND(item.Id != null, v.opp.StageName=='Closed Won')}"/>
+					</tr>
+				</aura:iteration>
+			</tbody>
+		</table>
+		<lightning:button variant="brand" label="Add Line Item" title="Add Line Item" onclick="{!c.addNewRow}" class="temclass" disabled="{!OR(v.opp.Account.Record_Type_Name__c=='Publisher', AND(v.opp.Account.Record_Type_Name__c=='Partner', v.opp.Account.Type=='Demand Side Platform DSP'))}"/>	
+		<lightning:button variant="Success" class="slds-button" label="SAVE" onclick="{!c.handleSubmit}" disabled="{!OR(v.opp.Account.Record_Type_Name__c=='Publisher', AND(v.opp.Account.Record_Type_Name__c=='Partner', v.opp.Account.Type=='Demand Side Platform DSP'))}"/>
+	</div>
+	<aura:if isTrue="{!v.spinner}">
+		<div class="exampleHolder">
+			<div class="demo-only demo-only demo-only_viewport demo--inverse" style="height:100%">
+				<div class="slds-spinner_container slds-is-fixed">
+					<div role="status" class="slds-spinner slds-spinner_medium">
+						<span class="slds-assistive-text">Loading</span>
+						<div class="slds-spinner__dot-a"></div>
+						<div class="slds-spinner__dot-b"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</aura:if>
+</aura:component>

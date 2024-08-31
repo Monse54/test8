@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deployment_Stage_IM__c</fullName>
+    <label>Deployment Stage - Media</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Business_Segment__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pending Setup</fullName>
+                <default>false</default>
+                <label>Pending Setup</label>
+            </value>
+            <value>
+                <fullName>Publisher Account Created</fullName>
+                <default>false</default>
+                <label>Publisher Account Created</label>
+            </value>
+            <value>
+                <fullName>Integration Started</fullName>
+                <default>false</default>
+                <label>Integration Started</label>
+            </value>
+            <value>
+                <fullName>QA Verified</fullName>
+                <default>false</default>
+                <label>QA Verified</label>
+            </value>
+            <value>
+                <fullName>Live</fullName>
+                <default>false</default>
+                <label>Live</label>
+            </value>
+            <value>
+                <fullName>Paused</fullName>
+                <default>false</default>
+                <label>Paused</label>
+            </value>
+            <value>
+                <fullName>Troubleshooting</fullName>
+                <default>false</default>
+                <label>Troubleshooting</label>
+            </value>
+            <value>
+                <fullName>Dead</fullName>
+                <default>false</default>
+                <label>Dead</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Pending Setup</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Publisher Account Created</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Integration Started</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>QA Verified</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Live</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Paused</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Troubleshooting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Media</controllingFieldValue>
+            <controllingFieldValue>Mediation</controllingFieldValue>
+            <controllingFieldValue>Primary Mediation</controllingFieldValue>
+            <valueName>Dead</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

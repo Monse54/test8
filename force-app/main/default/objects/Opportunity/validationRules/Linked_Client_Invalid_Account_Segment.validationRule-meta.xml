@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Linked_Client_Invalid_Account_Segment</fullName>
+    <active>false</active>
+    <errorConditionFormula>$Profile.Name != &apos;System Administrator&apos; &amp;&amp; RecordType.DeveloperName=&apos;Advertiser&apos; &amp;&amp; NOT(ISBLANK(Brand_Name1__c)) &amp;&amp; NOT(
+INCLUDES( Brand_Name1__r.Account_Segment__c,&apos;Brand&apos;) ||
+INCLUDES( Brand_Name1__r.Account_Segment__c,&apos;Performance&apos;) ||
+INCLUDES( Brand_Name1__r.Account_Segment__c,&apos;Programmatic - IX&apos;) ||
+INCLUDES( Brand_Name1__r.Account_Segment__c,&apos;Programmatic - RTBD&apos;) ||
+INCLUDES( Brand_Name1__r.Account_Segment__c,&apos;Programmatic - DCP&apos;)
+)</errorConditionFormula>
+    <errorMessage>Selected Linked Client&apos;s Account Segment must be one of the &quot;Brand, Performance, Programmatic - IX, Programmatic - RTBD, Programmatic - DCP&quot;</errorMessage>
+</ValidationRule>

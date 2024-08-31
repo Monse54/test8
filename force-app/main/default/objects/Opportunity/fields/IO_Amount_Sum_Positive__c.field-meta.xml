@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IO_Amount_Sum_Positive__c</fullName>
+    <label>IO Amount Sum Positive</label>
+    <summarizedField>Insertion_Order__c.Positive_IO_Amount__c</summarizedField>
+    <summaryFilterItems>
+        <field>Insertion_Order__c.RecordTypeId</field>
+        <operation>equals</operation>
+        <value>7. Positive Revision</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Insertion_Order__c.Pos_Nav_Related_IO_Status_Value__c</field>
+        <operation>notContain</operation>
+        <value>Cancelled</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Insertion_Order__c.IO_Mapped__c</field>
+        <operation>equals</operation>
+        <value>true</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Insertion_Order__c.Opportunity_Name__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <type>Summary</type>
+</CustomField>

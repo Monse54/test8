@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deployment_Stage__c</fullName>
+    <description>For Closed Won Opportunities, this indicates what stage the opportunity is at</description>
+    <inlineHelpText>For Closed Won Opportunities, this indicates what stage the opportunity is at</inlineHelpText>
+    <label>Deployment Stage - AS</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Opportunity_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Signed IO Received</fullName>
+                <default>false</default>
+                <label>Signed IO Received</label>
+            </value>
+            <value>
+                <fullName>Demo Given</fullName>
+                <default>false</default>
+                <label>Demo Given</label>
+            </value>
+            <value>
+                <fullName>Kick-off Call</fullName>
+                <default>false</default>
+                <label>Kick-off Call</label>
+            </value>
+            <value>
+                <fullName>Aerserv Account Created</fullName>
+                <default>false</default>
+                <label>Aerserv Account Created</label>
+            </value>
+            <value>
+                <fullName>Aerserv PLCs/Tags Created</fullName>
+                <default>false</default>
+                <label>Aerserv PLCs/Tags Created</label>
+            </value>
+            <value>
+                <fullName>Tags Tested</fullName>
+                <default>false</default>
+                <label>Tags Tested</label>
+            </value>
+            <value>
+                <fullName>Integrating SDK</fullName>
+                <default>false</default>
+                <label>Integrating SDK</label>
+            </value>
+            <value>
+                <fullName>Integrating Mediation</fullName>
+                <default>false</default>
+                <label>Integrating Mediation</label>
+            </value>
+            <value>
+                <fullName>SDK Integrated - Pending Live</fullName>
+                <default>false</default>
+                <label>SDK Integrated - Pending Live</label>
+            </value>
+            <value>
+                <fullName>Set up Waterfalls</fullName>
+                <default>false</default>
+                <label>Set up Waterfalls</label>
+            </value>
+            <value>
+                <fullName>Tags Delivered</fullName>
+                <default>false</default>
+                <label>Tags Delivered</label>
+            </value>
+            <value>
+                <fullName>Tags Live</fullName>
+                <default>false</default>
+                <label>Tags Live</label>
+            </value>
+            <value>
+                <fullName>Tags Maximized</fullName>
+                <default>false</default>
+                <label>Tags Maximized</label>
+            </value>
+            <value>
+                <fullName>Paused - Aerserv</fullName>
+                <default>false</default>
+                <label>Paused - Aerserv</label>
+            </value>
+            <value>
+                <fullName>Paused - Client</fullName>
+                <default>false</default>
+                <label>Paused - Client</label>
+            </value>
+            <value>
+                <fullName>Stopped</fullName>
+                <default>false</default>
+                <label>Stopped</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

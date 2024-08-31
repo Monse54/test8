@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Glance_Opportunity_Closure_Validation</fullName>
+    <active>false</active>
+    <description>Glance_Closure_Validation based on India Account (GST and PAN needed)</description>
+    <errorConditionFormula>RecordType.DeveloperName == &apos;Glance&apos; &amp;&amp; ISPICKVAL(Account.Account_Region_del__c,&apos;India&apos;) &amp;&amp; NOT(Account.Approved_For_GST__c) &amp;&amp; 
+ISPICKVAL(StageName, &apos;Closed Won&apos;) &amp;&amp;
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;</errorConditionFormula>
+    <errorMessage>Please upload GST and PAN related documents on Account and get it Approved, before closing this Opportunity</errorMessage>
+</ValidationRule>

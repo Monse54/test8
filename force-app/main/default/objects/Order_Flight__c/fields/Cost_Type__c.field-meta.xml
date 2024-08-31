@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cost_Type__c</fullName>
+    <label>Cost Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CPC</fullName>
+                <default>false</default>
+                <label>CPC</label>
+            </value>
+            <value>
+                <fullName>CPA</fullName>
+                <default>false</default>
+                <label>CPA</label>
+            </value>
+            <value>
+                <fullName>CPM</fullName>
+                <default>false</default>
+                <label>CPM</label>
+            </value>
+            <value>
+                <fullName>CPCV</fullName>
+                <default>false</default>
+                <label>CPCV</label>
+            </value>
+            <value>
+                <fullName>CPV</fullName>
+                <default>false</default>
+                <label>CPV</label>
+            </value>
+            <value>
+                <fullName>CPI</fullName>
+                <default>false</default>
+                <label>CPI</label>
+            </value>
+            <value>
+                <fullName>CPP</fullName>
+                <default>false</default>
+                <label>CPP</label>
+            </value>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+                <label>Not Applicable</label>
+            </value>
+            <value>
+                <fullName>CPL</fullName>
+                <default>false</default>
+                <label>CPL</label>
+            </value>
+            <value>
+                <fullName>CPI / CPA</fullName>
+                <default>false</default>
+                <label>CPI / CPA</label>
+            </value>
+            <value>
+                <fullName>dCPM</fullName>
+                <default>false</default>
+                <label>dCPM</label>
+            </value>
+            <value>
+                <fullName>Fixed Fee</fullName>
+                <default>false</default>
+                <label>Fixed Fee</label>
+            </value>
+            <value>
+                <fullName>CPLP</fullName>
+                <default>false</default>
+                <label>CPLP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

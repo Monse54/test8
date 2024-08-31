@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agency_PO_Number_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT( Agency_PO__c ) = &apos;Yes&apos; &amp;&amp; ISBLANK( Agency_PO_Number__c )</errorConditionFormula>
+    <errorDisplayField>Agency_PO_Number__c</errorDisplayField>
+    <errorMessage>Please mention Agency PO Number</errorMessage>
+</ValidationRule>

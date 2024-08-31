@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_on_Launch_Date</fullName>
+    <active>false</active>
+    <description>Validation to restrict enter Launch Date less than Close Date.
+DEACTIVATING THIS RULE PER https://inmobi.atlassian.net/browse/SBAU-88</description>
+    <errorConditionFormula>AND(CloseDate &gt; Launch_Date__c,
+  OR(ISNEW(), 
+     DATEVALUE(CreatedDate) &gt;= DATEVALUE(&quot;2015-04-07&quot;))
+    ) &amp;&amp;
+$Profile.Name != &apos;System Administrator&apos; &amp;&amp;
+ISCHANGED(StageName) &amp;&amp;
+ISPICKVAL(StageName,&apos;Closed Won&apos;) &amp;&amp;
+NOT( AND(OR(ISPICKVAL(Opportunity_Segment__c,&apos;Performance&apos;),ISPICKVAL(Opportunity_Segment__c,&apos;Brand&apos;)),RecordType.Name == &apos;Demand&apos;))</errorConditionFormula>
+    <errorDisplayField>Launch_Date__c</errorDisplayField>
+    <errorMessage>Launch Date cannot be less than Opportunity Closed Date</errorMessage>
+</ValidationRule>

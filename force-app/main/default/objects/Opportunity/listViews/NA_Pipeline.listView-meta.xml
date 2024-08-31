@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NA_Pipeline</fullName>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>Brand_Name1__c</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <columns>OPPORTUNITY.FISCAL_PERIOD</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Opportunity_Owner_Role__c</field>
+        <operation>equals</operation>
+        <value>sales team - na direct</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.FISCAL_PERIOD</field>
+        <operation>equals</operation>
+        <value>Q1-2022</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>On Hold,Dead/Lost,Dropped</value>
+    </filters>
+    <label>NA Pipeline</label>
+</ListView>

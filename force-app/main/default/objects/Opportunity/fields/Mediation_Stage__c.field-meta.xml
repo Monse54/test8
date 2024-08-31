@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mediation_Stage__c</fullName>
+    <description>This is the Mediation stage for an active publisher working with Publisher Account Management</description>
+    <inlineHelpText>This is the Mediation stage for an active publisher working with Publisher Account Management</inlineHelpText>
+    <label>Mediation Stage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Discussed Yet</fullName>
+                <default>false</default>
+                <label>Not Discussed Yet</label>
+            </value>
+            <value>
+                <fullName>Prospecting</fullName>
+                <default>false</default>
+                <label>Prospecting</label>
+            </value>
+            <value>
+                <fullName>Shown Interest</fullName>
+                <default>false</default>
+                <label>Shown Interest</label>
+            </value>
+            <value>
+                <fullName>Demo Scheduled</fullName>
+                <default>false</default>
+                <label>Demo Scheduled</label>
+            </value>
+            <value>
+                <fullName>Demo Given</fullName>
+                <default>false</default>
+                <label>Demo Given</label>
+            </value>
+            <value>
+                <fullName>Ad Sources Created/Testing</fullName>
+                <default>false</default>
+                <label>Ad Sources Created/Testing</label>
+            </value>
+            <value>
+                <fullName>Troubleshooting</fullName>
+                <default>false</default>
+                <label>Troubleshooting</label>
+            </value>
+            <value>
+                <fullName>Live on Mediation</fullName>
+                <default>false</default>
+                <label>Live on Mediation</label>
+            </value>
+            <value>
+                <fullName>Paused</fullName>
+                <default>false</default>
+                <label>Paused</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+            <value>
+                <fullName>IO Pending</fullName>
+                <default>false</default>
+                <label>IO Pending</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

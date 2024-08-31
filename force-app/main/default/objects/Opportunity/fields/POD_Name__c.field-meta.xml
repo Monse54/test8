@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POD_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>if ((Account.Rev_Ops_Team__c == &apos;China Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;China Brand Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;China Programmatic Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;China Perf-DSO Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;China Perf-RSO Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;China Export Pod&apos;), &apos;China&apos;,
+/*if ( Account.Rev_Ops_Team__c == &apos;India Pod&apos; , &apos;India&apos;, */
+if ( Account.Rev_Ops_Team__c == &apos;ISP&apos; , &apos;ISP&apos;,
+if ( Account.Rev_Ops_Team__c == &apos;iDSP&apos; , &apos;iDSP Pod&apos;,
+if ( Account.Rev_Ops_Team__c == &apos;Glance&apos; , &apos;Glance Pod&apos;,
+if ( Account.Rev_Ops_Team__c == &apos;Marketing Cloud&apos; , &apos;Marketing Cloud&apos;,
+if ( Account.Rev_Ops_Team__c == &apos;Fraud Defence&apos; , &apos;Fraud Defence Pod&apos;,
+if ( Account.Rev_Ops_Team__c == &apos;Wadogo Demand&apos; , &apos;Wadogo Demand&apos;,
+if ( (Account.Rev_Ops_Team__c == &apos;NA Brand Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;NA Channel Sales&apos; ||
+Account.Rev_Ops_Team__c == &apos;NA Direct Sales Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;NA CS TEAM&apos; ||
+Account.Rev_Ops_Team__c == &apos;NA Perf Pod&apos;) , &apos;NA&apos;,
+if( (Account.Rev_Ops_Team__c == &apos;EU Brand Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;META Brand Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;EU Perf + META Perf + ISO Pod&apos;) , &apos;EMEA&apos;,
+if( (Account.Rev_Ops_Team__c == &apos;ANZ Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;SEA Brand Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;SEA Perf Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;Korea Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;India Pod&apos; ||
+Account.Rev_Ops_Team__c == &apos;Japan Pod&apos;), &apos;APAC&apos;,
+if(Account.Rev_Ops_Team__c == &apos;LATAM Pod&apos;,&apos;LATAM Pod&apos;,&apos;&apos;)))))))))))</formula>
+    <label>POD Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

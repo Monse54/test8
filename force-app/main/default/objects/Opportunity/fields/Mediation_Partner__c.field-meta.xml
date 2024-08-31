@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mediation_Partner__c</fullName>
+    <description>Created as part of Supply 2.0 changes</description>
+    <label>Mediation Partner</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Burstly</fullName>
+                <default>false</default>
+                <label>Burstly</label>
+            </value>
+            <value>
+                <fullName>Admarvel</fullName>
+                <default>false</default>
+                <label>Admarvel</label>
+            </value>
+            <value>
+                <fullName>Mopub</fullName>
+                <default>false</default>
+                <label>Mopub</label>
+            </value>
+            <value>
+                <fullName>Mobclix</fullName>
+                <default>false</default>
+                <label>Mobclix</label>
+            </value>
+            <value>
+                <fullName>Amobee</fullName>
+                <default>false</default>
+                <label>Amobee</label>
+            </value>
+            <value>
+                <fullName>Adwhirl</fullName>
+                <default>false</default>
+                <label>Adwhirl</label>
+            </value>
+            <value>
+                <fullName>Admeld</fullName>
+                <default>false</default>
+                <label>Admeld</label>
+            </value>
+            <value>
+                <fullName>mOcean</fullName>
+                <default>false</default>
+                <label>mOcean</label>
+            </value>
+            <value>
+                <fullName>FreeWheel</fullName>
+                <default>false</default>
+                <label>FreeWheel</label>
+            </value>
+            <value>
+                <fullName>Nexage</fullName>
+                <default>false</default>
+                <label>Nexage</label>
+            </value>
+            <value>
+                <fullName>AdMob</fullName>
+                <default>false</default>
+                <label>AdMob</label>
+            </value>
+            <value>
+                <fullName>Google DFP via API</fullName>
+                <default>false</default>
+                <label>Google DFP via API</label>
+            </value>
+            <value>
+                <fullName>Adtech via API</fullName>
+                <default>false</default>
+                <label>Adtech via API</label>
+            </value>
+            <value>
+                <fullName>NONE</fullName>
+                <default>false</default>
+                <label>NONE</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>MAX</fullName>
+                <default>false</default>
+                <label>MAX</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

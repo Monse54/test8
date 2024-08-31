@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MDM_Opp_Creation_Block_Account_inApprova</fullName>
+    <active>false</active>
+    <description>Block creation of Opp for Account with MDM Status is in the Approval process</description>
+    <errorConditionFormula>IsNew()&amp;&amp;
+Account.RecordType.DeveloperName == &apos;Advertiser&apos; &amp;&amp;
+Text(Account.Account_Region_del__c) != &apos;Greater China&apos; &amp;&amp;
+Text(Account.MDM_Approval_Status__c) == &apos;Approval Required&apos; &amp;&amp;
+$Profile.Name &lt;&gt; &apos;System Administrator&apos;</errorConditionFormula>
+    <errorDisplayField>of_App_Downloads__c</errorDisplayField>
+    <errorMessage>Opportunity can not be created. The account is in the MDM-Approval process. Please do contact the Sales-Ops group.</errorMessage>
+</ValidationRule>

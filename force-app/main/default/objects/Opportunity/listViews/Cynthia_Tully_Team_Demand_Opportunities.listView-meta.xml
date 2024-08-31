@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cynthia_Tully_Team_Demand_Opportunities</fullName>
+    <columns>Manager_Forecast__c</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Brand_Name1__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.NEXT_STEP</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <columns>OPPORTUNITY.AMOUNT</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CORE.USERS.FULL_NAME</field>
+        <operation>equals</operation>
+        <value>Danielle Francis,Julie Berger,Rebecca Granat,William McClung,Daniel Orcutt,Andrew Gates,Charlie Goldberg,Jennifer Lin,Joseph Hustek,Yvonne Morel,Cynthia Tully,Jason Robins</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Opportunity.Demand</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.CLOSE_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_QUARTER</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>Dead/Lost</value>
+    </filters>
+    <label>Cynthia Tully Team Demand Opportunities</label>
+</ListView>

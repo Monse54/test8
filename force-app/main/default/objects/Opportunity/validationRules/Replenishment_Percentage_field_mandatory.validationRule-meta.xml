@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Replenishment_Percentage_field_mandatory</fullName>
+    <active>true</active>
+    <description>This validation rule will fire if for an Exchange opportunity, Replenishment % field is blank.</description>
+    <errorConditionFormula>(Is_Exchange_Opty__c = true &amp;&amp; 
+ISBLANK(Replenishment_Percentage__c)) &amp;&amp;
+RecordType.DeveloperName == &apos;Demand&apos; &amp;&amp;
+$Profile.Name != &apos;System Administrator&apos; &amp;&amp;
+NOT(ISPICKVAL(StageName,&apos;Closed Won&apos;))</errorConditionFormula>
+    <errorDisplayField>Replenishment_Percentage__c</errorDisplayField>
+    <errorMessage>Please enter a value for Replenishment Percentage field.</errorMessage>
+</ValidationRule>

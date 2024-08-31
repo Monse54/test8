@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supply_Opportunity_Record_Type</fullName>
+    <active>true</active>
+    <description>Supply Opportunity Record Type should only be available for Accounts with &apos;Record Type&apos; as Publisher.</description>
+    <errorConditionFormula>AND(RecordType.Name=&apos;Supply&apos;, Account_Record_Type__c&lt;&gt;&apos;Publisher&apos;, $Profile.Name&lt;&gt;&apos;System Administrator&apos;)</errorConditionFormula>
+    <errorMessage>Account record type should be &apos;Publisher&apos;.</errorMessage>
+</ValidationRule>

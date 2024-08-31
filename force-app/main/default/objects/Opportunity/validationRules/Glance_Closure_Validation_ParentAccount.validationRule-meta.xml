@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Glance_Closure_Validation_ParentAccount</fullName>
+    <active>false</active>
+    <description>Parent Account (ParentId) of Account must be selected before closing the Opportunity</description>
+    <errorConditionFormula>Account.RecordType.DeveloperName == &apos;Advertiser&apos; &amp;&amp; ISBLANK(Account.ParentId) &amp;&amp; IsClosed</errorConditionFormula>
+    <errorMessage>Please choose Parent Account on Account before closing the Opportunity.</errorMessage>
+</ValidationRule>

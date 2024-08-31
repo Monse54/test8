@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_MAID_Required_For_Stage_Progress</fullName>
+    <active>true</active>
+    <description>Opportunity Stage Cannot Proceed Without MAID on Account.</description>
+    <errorConditionFormula>Account.RecordType.DeveloperName &lt;&gt; &apos;Publisher&apos; &amp;&amp; OR(ISPICKVAL(StageName,&apos;Legal Review&apos;),ISPICKVAL(StageName,&apos;Closed Won&apos;)) &amp;&amp; ISBLANK(Account.MasterAccountId__c)</errorConditionFormula>
+    <errorDisplayField>AccountId</errorDisplayField>
+    <errorMessage>Opportunity cannot be moved to Legal Review or Closed Won if the Master Account Id is not populated at Account level for non- Publisher opportunities.</errorMessage>
+</ValidationRule>

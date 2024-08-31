@@ -1,0 +1,58 @@
+<template>
+    <!-- label={searchLabel} required read-only="true"-->
+    <!-- {orderItem}
+    {orderProduct} -->
+    <template if:true={orderItemBoolean}>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_4-of-4">
+                    <div class="retailerlookup" >
+                        <!-- <lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:search"></lightning-icon> -->
+                        <lightning-input
+                            value={orderValue}
+                            onchange={handleChange}
+                            disabled
+                            ></lightning-input>
+                    </div>
+                </div>
+            </div>
+    </template>
+
+    <template if:true={orderProductBoolean}>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_4-of-4">
+                <div class="retailerlookup" >
+                    <!-- <lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:search"></lightning-icon> -->
+                    <lightning-input
+                    style="width: 120px;"
+                        value={orderValue2}
+                        onkeyup={filterOptions}
+                        onclick={handleChange2}
+                        type="search"
+                        
+                        >
+                    </lightning-input>   
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+    <template if:true={orderSubproductBoolean}>
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_4-of-4">
+                <div class="retailerlookup" >
+                    <!-- <lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:search"></lightning-icon> -->
+                    <lightning-input
+                    style="width: 120px;"
+                        value={orderValue3}
+                        onkeyup={filterOptions}
+                        onclick={handleChange2}
+                        type="search"
+                        >
+                    </lightning-input>   
+                </div>
+            </div>
+        </div>
+    </template>
+
+</template>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Loss_Mandatory2</fullName>
+    <active>false</active>
+    <errorConditionFormula>($RecordType.DeveloperName == &apos;SAAS&apos; ||
+$RecordType.DeveloperName == &apos;Supply&apos; ||
+$RecordType.DeveloperName == &apos;OX_Seat&apos; ||
+$RecordType.DeveloperName == &apos;Search&apos; ||
+$RecordType.DeveloperName == &apos;Demand&apos;)&amp;&amp;
+(TEXT(StageName) == &apos;Dead/Lost&apos; ||
+TEXT(StageName) == &apos;Dropped&apos; ||
+TEXT(StageName) == &apos;Dormant&apos;
+) &amp;&amp;
+ISBLANK(TEXT(Reason__c)) &amp;&amp;
+(Account.RecordType.DeveloperName == &apos;Advertiser&apos; ||
+Account.RecordType.DeveloperName == &apos;&apos; ||
+Account.RecordType.DeveloperName == &apos;Advertiser&apos; ) &amp;&amp;
+ISCHANGED(StageName)</errorConditionFormula>
+    <errorDisplayField>Reason__c</errorDisplayField>
+    <errorMessage>Please enter the Reason for Loss!</errorMessage>
+</ValidationRule>

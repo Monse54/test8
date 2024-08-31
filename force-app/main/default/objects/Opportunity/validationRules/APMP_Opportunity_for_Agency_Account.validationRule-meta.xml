@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>APMP_Opportunity_for_Agency_Account</fullName>
+    <active>false</active>
+    <description>INVALID VALIDATION RULE - NO LONGER APPLICABLE - DO NOT ACTIVATE</description>
+    <errorConditionFormula>(  RecordType.DeveloperName == &apos;Demand&apos; ) &amp;&amp; 
+AND(
+OR(ISPICKVAL(Opportunity_Type__c ,&apos;APMP&apos;),ISPICKVAL(Opportunity_Type__c ,&apos;DPMP&apos;)),
+NOT(AND( OR(Account.RecordType.DeveloperName = &apos;Agency&apos;, Account.RecordType.DeveloperName = &apos;Advertiser&apos;) , ISPICKVAL( Opportunity_SubType__c,&apos;PMP&apos;))))</errorConditionFormula>
+    <errorMessage>APMP Opportunity Will be Created Only For Agency or Advertiser Account Type And Opportunity Sub Type Should be PMP</errorMessage>
+</ValidationRule>

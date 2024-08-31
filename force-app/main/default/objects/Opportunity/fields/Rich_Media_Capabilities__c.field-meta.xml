@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rich_Media_Capabilities__c</fullName>
+    <description>Created as part of Supply 2.0 changes</description>
+    <label>Rich Media Capabilities</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Interstitial</fullName>
+                <default>false</default>
+                <label>Interstitial</label>
+            </value>
+            <value>
+                <fullName>Expandable</fullName>
+                <default>false</default>
+                <label>Expandable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Closed</fullName>
+    <active>false</active>
+    <description>Opportunity Can be closed when IO Status is signed</description>
+    <errorConditionFormula>Signed_IO__c = 0 &amp;&amp; ISPICKVAL(StageName,&apos;Closed Won&apos;) &amp;&amp; DATEVALUE(CreatedDate)  &gt;=    DATE(2012,5,14)</errorConditionFormula>
+    <errorMessage>Opportunity Can be closed when IO Status is signed</errorMessage>
+</ValidationRule>
